@@ -1,0 +1,48 @@
+body,html {
+	margin: 0;
+	padding: 0;
+	font-family: "Proxima Nova", sans-serif;
+	font-size: 0.95em;
+	text-align: center;
+}
+#plotarea {
+	margin-top: 20px;
+}
+#plot {
+	background-color: #d7ecfd;
+}
+.flowLine {
+	fill: none;
+	stroke: #1d80a5;
+	stroke-width: 3;
+	shape-rendering: crispEdges;
+}
+.flowPoint {
+	fill: #1d80a5;
+}
+.axis path,
+.axis line {
+	stroke: #98999a;
+	stroke-width: 2;
+	shape-rendering: crispEdges;
+}
+#axesDetails text {
+	fill: #98999a;
+	font-size: 1.5em;
+	shape-rendering: crispEdges;
+}
+.tick line {
+	fill: #98999a;
+	stroke: #98999a;
+	shape-rendering: crispEdges;
+}
+#tooltip {
+	position: absolute;
+  	padding: 5px;
+  	background-color: white;
+  	border-radius: 10px;
+  	box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+}
+div#tooltip.hidden {
+	display: none;
+}
