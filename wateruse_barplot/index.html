@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Water Use 1</title>
+	<link rel="stylesheet" href="main.css">
+	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script type="text/javascript" src="https://d3js.org/colorbrewer.v1.min.js"></script>
+</head>
+<body>
+<script>
+// chart basics
+var svgWidth = 800,
+	svgHeight = 450,
+	margin = {
+		top: 60,
+		bottom: 80,
+		left: 100,
+		right: 80
+	},
+	width = svgWidth - margin.left - margin.right,
+	height = svgHeight - margin.top - margin.bottom;
+var svg = d3.select("body").append("svg")
+			.attr("id", "svg")
+			.attr("width", svgWidth)
+			.attr("height", svgHeight);
+var chart = svg.append("g")
+			.classed("display", true)
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// scale setup
+var x = d3.scaleBand()
+	.rangeRound([0, width])
+	.paddingInner(0.05)
+	.align(0.1);
+var y = d3.scaleLinear()
+	.rangeRound([height, 0]);
+var color = d3.scaleOrdinal() // borrowing from https://bl.ocks.org/mbostock/3886208
+	.range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56", "#d0743c", "#ff8c00"]);
+
+// load the data and call plot()
+d3.tsv('wateruse.tsv',
+	row = function(d, i, columns) {
+		// make all the numbers numeric
+		d['PS-TOPop'] = +d['PS-TOPop'];
+		d['PS-WGWTo'] = +d['PS-WGWTo'];
+		d['PS-WSWTo'] = +d['PS-WSWTo'];
+		d['DO-WGWFr'] = +d['DO-WGWFr'];
+		d['DO-WSWFr'] = +d['DO-WSWFr'];
+		d['IN-WGWTo'] = +d['IN-WGWTo'];
+		d['IN-WSWTo'] = +d['IN-WSWTo'];
+		
+		// row sums, excluding COUNTY and PS_TOPop
+		// again borrowing from https://bl.ocks.org/mbostock/3886208
+		for(i = 2, t = 0; i < columns.length; ++i) {
+			t += d[columns[i]];
+		}
+		d.total = t;
+		return(d);
+	},
+	callback = function(error, data, columns) {
+		if (error) throw error;
+		d3.json('datadict.json', function(error, dict) {
+			if (error) throw error;
+			plot.call(chart, params={
+				data: data,
+				dict: dict
+			});
+		});
+	});
+	
+var plot = function(params) {
+	
+	var dict = d3.map(params.dict, function(d) { return d['Column Tag']; });
+	console.log(dict.get('DO-WSWFr')['Attribute']);
+	var data = params.data
+		.sort(function(a, b) { return b.total - a.total; });
+	var useCategories = data.columns.slice(2);
+	
+	// set scale domains
+	x.domain(data.map(function(d) { return d.COUNTY }));
+	y.domain([0, d3.max(data, function(d) { return d.total; })]).nice();
+	color.domain(useCategories);
+	
+	chart.append("g")
+		// create groups, 1 for each series
+		.selectAll("g")
+		.data(d3.stack().keys(useCategories)(data))
+		.enter().append("g")
+			.attr("fill", function(d) { return color(d.key); })
+		// now for each group 
+		.selectAll("rect")
+		.data(function(d) { return d; })
+		.enter().append("rect")
+			.attr("x", function(d) { return x(d.data.COUNTY); })
+			.attr("y", function(d) { return y(d[1]); })
+			.attr("height", function(d) { return y(d[0]) - y(d[1]); })
+			.attr("width", x.bandwidth());
+	
+	chart.append("g")
+		.attr("class", "axis")
+		.attr("transform", "translate(0," + height + ")")
+		.call(d3.axisBottom(x));
+
+	chart.append("g")
+		.attr("class", "axis")
+		.call(d3.axisLeft(y).ticks(null, "s"))
+		.append("text")
+			.attr("x", 2)
+			.attr("y", y(y.ticks().pop()) + 0.5)
+			.attr("dy", "0.32em")
+			.attr("fill", "#000")
+			.attr("font-weight", "bold")
+			.attr("text-anchor", "start")
+			.text("Water withdrawals (Mgal/d)");
+	
+	// add a legend for the box colors
+	var legend = chart.append("g")
+		.attr("font-family", "sans-serif")
+		.attr("font-size", 10)
+		.attr("text-anchor", "end")
+		.selectAll("g")
+			.data(useCategories.slice().reverse())
+			.enter().append("g")
+			.attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+	legend.append("rect")
+		.attr("x", width - 19)
+		.attr("width", 19)
+		.attr("height", 19)
+		.attr("fill", color);
+	legend.append("text")
+		.attr("x", width - 24)
+		.attr("y", 9.5)
+		.attr("dy", "0.32em")
+		.text(function(d) { return d; })
+		.on("mouseover", function(d, i) {
+			d3.select(this)
+				.text(dict.get(d)['Attribute']);
+		})
+		.on("mouseout", function(d, i) {
+			d3.select(this)
+				.text(d);
+		});
+
+}
+</script>
+</body>
+</html>
