@@ -1,0 +1,20 @@
+var data = {
+	nodes: [
+		{node:1,org:"NAACP",name:"National Association for the Advancement of Colored People",size:3,year:1950},
+		{node:2,org:"BPP",name:"Black Panther Party",size:1,year:1950},
+		{node:3,org:"SNCC",name:"Student Non-violent Coordinating Committee",size:2,year:1950},
+		{node:1,org:"NAACP",name:"National Association for the Advancement of Colored People",size:2,year:1960},
+		{node:2,org:"BPP",name:"Black Panther Party",size:1,year:1960},
+		{node:3,org:"SNCC",name:"Student Non-violent Coordinating Committee",size:2,year:1960},
+		{node:1,org:"NAACP",name:"National Association for the Advancement of Colored People",size:1,year:1970},
+		{node:2,org:"BPP",name:"Black Panther Party",size:3,year:1970}
+	],
+	links: [
+		{source:1,target:3,year:1950},
+		{source:2,target:3,year:1950},
+		{source:1,target:2,year:1960},
+		{source:1,target:3,year:1960},
+		{source:2,target:3,year:1960},
+		{source:1,target:2,year:1970}
+	] 	
+};
