@@ -65,17 +65,21 @@ function combineData(error, seasons) {
 	plotarea = exit(plotarea);
 
 	d3.select("form").on("submit", function(d) {
+		
         var new_yvar = document.getElementById("yaxis").value.toLowerCase();
         if(new_yvar == "goal differential") {
         	new_yvar = "goals-dff";
         }
-        console.log(new_yvar);
 
         plotarea = addDataToPlot(plotarea, merged_data, new_yvar);
-        plotarea = exit(plotarea);
+        
+        //d3.selectAll(".datapt").exit().remove();
+		//d3.selectAll(".teamline").exit().remove();
+		console.log(d3.selectAll(".datapt"));
 
-        //by default html form submissions does a full page refresh, this turns that off
+		//by default html form submissions does a full page refresh, this turns that off
         d3.event.preventDefault(); 
+
     });
 
 	return plotarea;
@@ -136,19 +140,28 @@ function addDataToPlot(plot, data, yvar) {
 	// update phase????
 	lines_g.selectAll(".teamline")
 		.on("mouseover", function(d) {
-			var this_color = d3.select(this).style("stroke");
-			d3.selectAll(".teamline").style("stroke", "grey");
-			d3.select(this).style("stroke", this_color);
+			//var this_color = d3.select(this).style("stroke");
+			//d3.selectAll(".teamline").style("stroke", "grey");
+			//d3.select(this).style("stroke", this_color);
 			d3.select(this).style("stroke-width", 5);
+
+			// determine location of mouse
+			var x_val = d3.event.pageX; //xScale(d.startyear); //
+			var y_val = d3.event.pageY; //yScale(d[yvar]); //
+			console.log(x_val, y_val);
+			// add text element
+			d3.select("#tooltip")
+				.style("display", "block")
+				.style("left", x_val+"px")
+				.style("top", y_val+"px")
+				.select("#teamName").text("hello!");
+
 		})
-		.on("mouseout", function(d) {
-			d3.selectAll(".teamline").style("stroke", colorScale(d.key));
+		.on("mouseout", function(d,i) {
+			//d3.selectAll(".teamline").style("stroke", colorScale(d.key));
 			d3.select(this).style("stroke-width", 1);
+			d3.selectAll("#tooltip").style("display", "none");//.remove();
 		})
-
-
-	// exit phase not working?
-	plot.exit().remove();
 
 	//console.log(databyteam);
 	return plot;
