@@ -28,7 +28,7 @@ function parseEPLJson(url, season, callback) {
 			d.season = season;
 			d["goals-dff"] = parseFloat(d["goals-dff"]); //parseFloat for handling negative values
 			// keep only the first season and convert to year
-				var yr1 = season.match(/[0-9]{2}-*/)[0];
+				var yr1 = season.match(/[0-9]{2}-*/)[0]; // "12-13" = "12-"
 				d.startyear = d3.timeParse("%y")(yr1.replace("-","")).getFullYear();
 		});
 		callback(null, data); // CALLBACK MUST BE INSIDE d3.json --- VERY IMPORTANT. This is what tells d3.defer what to return when it is ready
@@ -73,8 +73,7 @@ function combineData(error, seasons) {
 
         plotarea = addDataToPlot(plotarea, merged_data, new_yvar);
         
-        //d3.selectAll(".datapt").exit().remove();
-		//d3.selectAll(".teamline").exit().remove();
+        
 		console.log(d3.selectAll(".datapt"));
 
 		//by default html form submissions does a full page refresh, this turns that off
@@ -118,8 +117,9 @@ function addDataToPlot(plot, data, yvar) {
     
 	// add points
 	var pts_g = plot.append("g").attr("class", "datapt");
-	pts_g.selectAll(".datapt")
-		.data(data).enter()
+	pts = pts_g.selectAll(".datapt")
+			.data(data);
+	pts.enter()
 		.append("circle")
 		.attr("class", "datapt")
 		.attr("r", 3)
@@ -128,7 +128,10 @@ function addDataToPlot(plot, data, yvar) {
 		.style("fill", function(d) { return colorScale(d.team); });
 		
 	// add lines
-	var lines_g = plot.append("g").attr("class", "teamline")	
+	var lines_g = plot.append("g").attr("class", "teamline")
+	var lines = lines_g.selectAll(".teamlines")
+					.data(databyteam);
+
 	databyteam.forEach(function(d, i) {
 		lines_g.append("path")
 		.attr("class", "teamline")
@@ -162,6 +165,11 @@ function addDataToPlot(plot, data, yvar) {
 			d3.select(this).style("stroke-width", 1);
 			d3.selectAll("#tooltip").style("display", "none");//.remove();
 		})
+
+	//d3.selectAll(".datapt").exit().remove();
+	//d3.selectAll(".teamline").exit().remove();
+	pts.exit().remove();
+	lines.exit().remove();
 
 	//console.log(databyteam);
 	return plot;
