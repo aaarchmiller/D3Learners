@@ -61,8 +61,6 @@ function combineData(error, seasons) {
 	// this is where you put code to use merged_data!!!!!!!!!!!!!!!!!!!!!!
 	var yvar = document.getElementById("yaxis").value.toLowerCase();
 	plotarea = addDataToPlot(plotarea, merged_data, yvar);
-	plotarea = update(plotarea);
-	plotarea = exit(plotarea);
 
 	d3.select("form").on("submit", function(d) {
 		
@@ -72,7 +70,6 @@ function combineData(error, seasons) {
         }
 
         plotarea = addDataToPlot(plotarea, merged_data, new_yvar);
-        
         
 		console.log(d3.selectAll(".datapt"));
 
@@ -105,6 +102,8 @@ function addDataToPlot(plot, data, yvar) {
           .classed("axis", true)
           .call(yAxis);
 
+    axesDetails.exit().remove();
+
 	// setup line function
 	var buildLine = d3.line().curve(d3.curveCardinal)
 		.x(function(d) { return xScale(d.startyear); })
@@ -116,9 +115,9 @@ function addDataToPlot(plot, data, yvar) {
     	.entries(data);
     
 	// add points
-	var pts_g = plot.append("g").attr("class", "datapt");
-	pts = pts_g.selectAll(".datapt")
-			.data(data);
+	var pts_g = plot.append("g");
+	var pts = pts_g.selectAll(".datapt").data(data);
+
 	pts.enter()
 		.append("circle")
 		.attr("class", "datapt")
@@ -128,17 +127,15 @@ function addDataToPlot(plot, data, yvar) {
 		.style("fill", function(d) { return colorScale(d.team); });
 		
 	// add lines
-	var lines_g = plot.append("g").attr("class", "teamline")
-	var lines = lines_g.selectAll(".teamlines")
-					.data(databyteam);
+	var lines_g = plot.append("g");
+	var lines = lines_g.selectAll(".teamline").data(databyteam);
 
-	databyteam.forEach(function(d, i) {
-		lines_g.append("path")
+  	lines.enter()
+  		.append("path")
 		.attr("class", "teamline")
-		.attr("d", buildLine(d.values))
-		.style("stroke", colorScale(d.key))
+		.attr("d", function(d) { return buildLine(d.values); })
+		.style("stroke", function(d) { return colorScale(d.key); })
 		.style("fill", "none");
-	})
 
 	// update phase????
 	lines_g.selectAll(".teamline")
@@ -146,9 +143,7 @@ function addDataToPlot(plot, data, yvar) {
 			//var this_color = d3.select(this).style("stroke");
 			//d3.selectAll(".teamline").style("stroke", "grey");
 			//d3.select(this).style("stroke", this_color);
-			d3.select(this).style("stroke-width", 5);
-
-			// determine location of mouse
+			d3.select(this).style("stroke-width", 5);			// determine location of mouse
 			var x_val = d3.event.pageX; //xScale(d.startyear); //
 			var y_val = d3.event.pageY; //yScale(d[yvar]); //
 			console.log(x_val, y_val);
@@ -166,8 +161,6 @@ function addDataToPlot(plot, data, yvar) {
 			d3.selectAll("#tooltip").style("display", "none");//.remove();
 		})
 
-	//d3.selectAll(".datapt").exit().remove();
-	//d3.selectAll(".teamline").exit().remove();
 	pts.exit().remove();
 	lines.exit().remove();
 
@@ -175,13 +168,3 @@ function addDataToPlot(plot, data, yvar) {
 	return plot;
 }
 
-function update(plot) {
-
-
-	return plot;
-}
-
-function exit(plot) {
-	
-	return plot;
-}
