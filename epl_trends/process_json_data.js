@@ -62,6 +62,7 @@ function combineData(error, seasons) {
 	var yvar = document.getElementById("yaxis").value.toLowerCase();
 	plotarea = addDataToPlot(plotarea, merged_data, yvar);
 
+	
 	d3.select("form").on("submit", function(d) {
 		
         var new_yvar = document.getElementById("yaxis").value.toLowerCase();
@@ -69,13 +70,10 @@ function combineData(error, seasons) {
         	new_yvar = "goals-dff";
         }
 
-        plotarea = addDataToPlot(plotarea, merged_data, new_yvar);
-        
-		console.log(d3.selectAll(".datapt"));
-
+        plotarea = updatePlot(plotarea, merged_data, new_yvar);
+		
 		//by default html form submissions does a full page refresh, this turns that off
-        d3.event.preventDefault(); 
-
+    	d3.event.preventDefault(); 
     });
 
 	return plotarea;
@@ -96,10 +94,14 @@ function addDataToPlot(plot, data, yvar) {
           .attr("id", "xAxis")
           .attr("transform", "translate(" + 0 + "," + plotheight + ")")
           .classed("axis", true)
+          .transition()
+          .duration(duration_time)
           .call(xAxis);
     axesDetails.append("g")
           .attr("id", "yAxis")
           .classed("axis", true)
+          .transition()
+          .duration(duration_time)
           .call(yAxis);
 
     axesDetails.exit().remove();
@@ -165,6 +167,30 @@ function addDataToPlot(plot, data, yvar) {
 	lines.exit().remove();
 
 	//console.log(databyteam);
+	return plot;
+}
+
+function updatePlot(plot, data, yvar) {
+	
+	// add to scaling functions based on data
+	var ymax = d3.max(data, function(d) { return d[yvar]; });
+	yScale.domain([ymax, 0]);
+
+	// update y axis
+	plot.select("#yAxis")
+		.duration(duration_time)
+		.call(yAxis);
+
+	// update pts
+	plot.selectAll(".datapts")
+		.duration(duration_time)
+		.attr("cy", function(d) { return yScale(d[yvar]); });
+
+	// update lines
+	plot.selectAll(".teamline")
+		.duration(duration_time)
+		.attr("d", function(d) { return buildLine(d.values); });
+
 	return plot;
 }
 
