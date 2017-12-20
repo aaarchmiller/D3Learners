@@ -1,0 +1,53 @@
+*{padding: 0; margin: 0;}
+
+body{
+	background:rgb(230,230,230);
+	font-family:sans-serif;
+}
+
+#container{
+	background:#fff;
+	width:940px;
+	margin:20px auto;
+	min-height:100px;
+	border-radius:10px;
+	padding:10px;
+}
+
+#weeks{
+	width:100px;
+	margin-bottom:10px;
+	outline:none;
+}
+
+#figure{
+	height:400px;
+	background:rgb(240,240,240);
+	border:1px solid rgb(190,190,190);
+	border-radius:10px;
+	position: relative;
+}
+
+.gridlines path,
+.gridlines line{
+	stroke:rgb(190,190,190);
+}
+
+#tooltip{
+	display: none;
+	background:#fff;
+	width:40px;
+	height:40px;
+	position:absolute;
+	text-align:center;
+	line-height: 40px;
+	border:1px solid rgb(150,150,150);
+	border-radius:5px;
+	pointer-events: none;
+}
+
+.xAxis,
+.yAxis{
+	font-weight:bold;
+}
+

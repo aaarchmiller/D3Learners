@@ -1,0 +1,602 @@
+{
+	"Week One":[
+		{
+			"teamname": "All Night Long",
+			"scratchTotal": "1835"
+		},
+		{
+			"teamname": "Pocket Pounders",
+			"scratchTotal": "2277"
+		},
+		{
+			"teamname": "Holy Schtrikies!",
+			"scratchTotal": "1727"
+		},
+		{
+			"teamname": "Thirsty Thursday",
+			"scratchTotal": "1727"
+		},
+		{
+			"teamname": "Tae Bowlers",
+			"scratchTotal": "1567"
+		},
+		{
+			"teamname": "Rotary South",
+			"scratchTotal": "1526"
+		},
+		{
+			"teamname": "Cobra Kai",
+			"scratchTotal": "1689"
+		},
+		{
+			"teamname": "Spare Me",
+			"scratchTotal": "1642"
+		},
+		{
+			"teamname": "Long Shots",
+			"scratchTotal": "2129"
+		},
+		{
+			"teamname": "Livin' On a Spare",
+			"scratchTotal": "1620"
+		},
+		{
+			"teamname": "Yah Beeches",
+			"scratchTotal": "2149"
+		},
+		{
+			"teamname": "Up Your Average",
+			"scratchTotal": "1997"
+		}
+	],
+	"Week Two":[
+		{
+			"teamname": "All Night Long",
+			"scratchTotal": "1704"
+		},
+		{
+			"teamname": "Pocket Pounders",
+			"scratchTotal": "2143"
+		},
+		{
+			"teamname": "Holy Schtrikies!",
+			"scratchTotal": "1652"
+		},
+		{
+			"teamname": "Thirsty Thursday",
+			"scratchTotal": "1664"
+		},
+		{
+			"teamname": "Tae Bowlers",
+			"scratchTotal": "1681"
+		},
+		{
+			"teamname": "Rotary South",
+			"scratchTotal": "1654"
+		},
+		{
+			"teamname": "Cobra Kai",
+			"scratchTotal": "1609"
+		},
+		{
+			"teamname": "Spare Me",
+			"scratchTotal": "1328"
+		},
+		{
+			"teamname": "Long Shots",
+			"scratchTotal": "2287"
+		},
+		{
+			"teamname": "Livin' On a Spare",
+			"scratchTotal": "1609"
+		},
+		{
+			"teamname": "Yah Beeches",
+			"scratchTotal": "2054"
+		},
+		{
+			"teamname": "Up Your Average",
+			"scratchTotal": "1982"
+		}
+	],
+	"Week Three":[
+		{
+			"teamname": "All Night Long",
+			"scratchTotal": "1581"
+		},
+		{
+			"teamname": "Pocket Pounders",
+			"scratchTotal": "2240"
+		},
+		{
+			"teamname": "Holy Schtrikies!",
+			"scratchTotal": "1604"
+		},
+		{
+			"teamname": "Thirsty Thursday",
+			"scratchTotal": "1762"
+		},
+		{
+			"teamname": "Tae Bowlers",
+			"scratchTotal": "1540"
+		},
+		{
+			"teamname": "Rotary South",
+			"scratchTotal": "1627"
+		},
+		{
+			"teamname": "Cobra Kai",
+			"scratchTotal": "1755"
+		},
+		{
+			"teamname": "Spare Me",
+			"scratchTotal": "1453"
+		},
+		{
+			"teamname": "Long Shots",
+			"scratchTotal": "2265"
+		},
+		{
+			"teamname": "Livin' On a Spare",
+			"scratchTotal": "1625"
+		},
+		{
+			"teamname": "Yah Beeches",
+			"scratchTotal": "2092"
+		},
+		{
+			"teamname": "Up Your Average",
+			"scratchTotal": "2051"
+		}
+	],
+	"Week Four":[
+		{
+			"teamname": "All Night Long",
+			"scratchTotal": "1597"
+		},
+		{
+			"teamname": "Pocket Pounders",
+			"scratchTotal": "2296"
+		},
+		{
+			"teamname": "Holy Schtrikies!",
+			"scratchTotal": "1719"
+		},
+		{
+			"teamname": "Thirsty Thursday",
+			"scratchTotal": "1709"
+		},
+		{
+			"teamname": "Tae Bowlers",
+			"scratchTotal": "1729"
+		},
+		{
+			"teamname": "Rotary South",
+			"scratchTotal": "1576"
+		},
+		{
+			"teamname": "Cobra Kai",
+			"scratchTotal": "1581"
+		},
+		{
+			"teamname": "Spare Me",
+			"scratchTotal": "1453"
+		},
+		{
+			"teamname": "Long Shots",
+			"scratchTotal": "2350"
+		},
+		{
+			"teamname": "Livin' On a Spare",
+			"scratchTotal": "1568"
+		},
+		{
+			"teamname": "Yah Beeches",
+			"scratchTotal": "2142"
+		},
+		{
+			"teamname": "Up Your Average",
+			"scratchTotal": "1967"
+		}
+	],
+	"Week Five":[
+		{
+			"teamname": "All Night Long",
+			"scratchTotal": "1626"
+		},
+		{
+			"teamname": "Pocket Pounders",
+			"scratchTotal": "2168"
+		},
+		{
+			"teamname": "Holy Schtrikies!",
+			"scratchTotal": "1742"
+		},
+		{
+			"teamname": "Thirsty Thursday",
+			"scratchTotal": "1806"
+		},
+		{
+			"teamname": "Tae Bowlers",
+			"scratchTotal": "1573"
+		},
+		{
+			"teamname": "Rotary South",
+			"scratchTotal": "1841"
+		},
+		{
+			"teamname": "Cobra Kai",
+			"scratchTotal": "1679"
+		},
+		{
+			"teamname": "Spare Me",
+			"scratchTotal": "1509"
+		},
+		{
+			"teamname": "Long Shots",
+			"scratchTotal": "2431"
+		},
+		{
+			"teamname": "Livin' On a Spare",
+			"scratchTotal": "1793"
+		},
+		{
+			"teamname": "Yah Beeches",
+			"scratchTotal": "2246"
+		},
+		{
+			"teamname": "Up Your Average",
+			"scratchTotal": "2242"
+		}
+	],
+	"Week Six":[
+		{
+			"teamname": "All Night Long",
+			"scratchTotal": "1821"
+		},
+		{
+			"teamname": "Pocket Pounders",
+			"scratchTotal": "2387"
+		},
+		{
+			"teamname": "Holy Schtrikies!",
+			"scratchTotal": "1734"
+		},
+		{
+			"teamname": "Thirsty Thursday",
+			"scratchTotal": "1669"
+		},
+		{
+			"teamname": "Tae Bowlers",
+			"scratchTotal": "1792"
+		},
+		{
+			"teamname": "Rotary South",
+			"scratchTotal": "1645"
+		},
+		{
+			"teamname": "Cobra Kai",
+			"scratchTotal": "1715"
+		},
+		{
+			"teamname": "Spare Me",
+			"scratchTotal": "1538"
+		},
+		{
+			"teamname": "Long Shots",
+			"scratchTotal": "2341"
+		},
+		{
+			"teamname": "Livin' On a Spare",
+			"scratchTotal": "1665"
+		},
+		{
+			"teamname": "Yah Beeches",
+			"scratchTotal": "1981"
+		},
+		{
+			"teamname": "Up Your Average",
+			"scratchTotal": "2202"
+		}
+	],
+	"Week Seven":[
+		{
+			"teamname": "All Night Long",
+			"scratchTotal": "1588"
+		},
+		{
+			"teamname": "Pocket Pounders",
+			"scratchTotal": "2436"
+		},
+		{
+			"teamname": "Holy Schtrikies!",
+			"scratchTotal": "1741"
+		},
+		{
+			"teamname": "Thirsty Thursday",
+			"scratchTotal": "1608"
+		},
+		{
+			"teamname": "Tae Bowlers",
+			"scratchTotal": "1567"
+		},
+		{
+			"teamname": "Rotary South",
+			"scratchTotal": "1815"
+		},
+		{
+			"teamname": "Cobra Kai",
+			"scratchTotal": "1559"
+		},
+		{
+			"teamname": "Spare Me",
+			"scratchTotal": "1505"
+		},
+		{
+			"teamname": "Long Shots",
+			"scratchTotal": "2252"
+		},
+		{
+			"teamname": "Livin' On a Spare",
+			"scratchTotal": "1624"
+		},
+		{
+			"teamname": "Yah Beeches",
+			"scratchTotal": "2056"
+		},
+		{
+			"teamname": "Up Your Average",
+			"scratchTotal": "2087"
+		}
+	],
+	"Week Eight":[
+		{
+			"teamname": "All Night Long",
+			"scratchTotal": "1607"
+		},
+		{
+			"teamname": "Pocket Pounders",
+			"scratchTotal": "2326"
+		},
+		{
+			"teamname": "Holy Schtrikies!",
+			"scratchTotal": "1722"
+		},
+		{
+			"teamname": "Thirsty Thursday",
+			"scratchTotal": "1839"
+		},
+		{
+			"teamname": "Tae Bowlers",
+			"scratchTotal": "1628"
+		},
+		{
+			"teamname": "Rotary South",
+			"scratchTotal": "1819"
+		},
+		{
+			"teamname": "Cobra Kai",
+			"scratchTotal": "1767"
+		},
+		{
+			"teamname": "Spare Me",
+			"scratchTotal": "1518"
+		},
+		{
+			"teamname": "Long Shots",
+			"scratchTotal": "2446"
+		},
+		{
+			"teamname": "Livin' On a Spare",
+			"scratchTotal": "1658"
+		},
+		{
+			"teamname": "Yah Beeches",
+			"scratchTotal": "2443"
+		},
+		{
+			"teamname": "Up Your Average",
+			"scratchTotal": "2182"
+		}
+	],
+	"Week Nine":[
+		{
+			"teamname": "All Night Long",
+			"scratchTotal": "1690"
+		},
+		{
+			"teamname": "Pocket Pounders",
+			"scratchTotal": "2264"
+		},
+		{
+			"teamname": "Holy Schtrikies!",
+			"scratchTotal": "1772"
+		},
+		{
+			"teamname": "Thirsty Thursday",
+			"scratchTotal": "1784"
+		},
+		{
+			"teamname": "Tae Bowlers",
+			"scratchTotal": "1698"
+		},
+		{
+			"teamname": "Rotary South",
+			"scratchTotal": "1792"
+		},
+		{
+			"teamname": "Cobra Kai",
+			"scratchTotal": "1855"
+		},
+		{
+			"teamname": "Spare Me",
+			"scratchTotal": "1578"
+		},
+		{
+			"teamname": "Long Shots",
+			"scratchTotal": "2122"
+		},
+		{
+			"teamname": "Livin' On a Spare",
+			"scratchTotal": "1641"
+		},
+		{
+			"teamname": "Yah Beeches",
+			"scratchTotal": "2076"
+		},
+		{
+			"teamname": "Up Your Average",
+			"scratchTotal": "2130"
+		}
+	],
+	"Week Ten":[
+		{
+			"teamname": "All Night Long",
+			"scratchTotal": "1764"
+		},
+		{
+			"teamname": "Pocket Pounders",
+			"scratchTotal": "2251"
+		},
+		{
+			"teamname": "Holy Schtrikies!",
+			"scratchTotal": "1794"
+		},
+		{
+			"teamname": "Thirsty Thursday",
+			"scratchTotal": "1702"
+		},
+		{
+			"teamname": "Tae Bowlers",
+			"scratchTotal": "1867"
+		},
+		{
+			"teamname": "Rotary South",
+			"scratchTotal": "1756"
+		},
+		{
+			"teamname": "Cobra Kai",
+			"scratchTotal": "1860"
+		},
+		{
+			"teamname": "Spare Me",
+			"scratchTotal": "1573"
+		},
+		{
+			"teamname": "Long Shots",
+			"scratchTotal": "2211"
+		},
+		{
+			"teamname": "Livin' On a Spare",
+			"scratchTotal": "1529"
+		},
+		{
+			"teamname": "Yah Beeches",
+			"scratchTotal": "2206"
+		},
+		{
+			"teamname": "Up Your Average",
+			"scratchTotal": "2092"
+		}
+	],
+	"Week Eleven":[
+		{
+			"teamname": "All Night Long",
+			"scratchTotal": "1889"
+		},
+		{
+			"teamname": "Pocket Pounders",
+			"scratchTotal": "2440"
+		},
+		{
+			"teamname": "Holy Schtrikies!",
+			"scratchTotal": "1735"
+		},
+		{
+			"teamname": "Thirsty Thursday",
+			"scratchTotal": "1786"
+		},
+		{
+			"teamname": "Tae Bowlers",
+			"scratchTotal": "1753"
+		},
+		{
+			"teamname": "Rotary South",
+			"scratchTotal": "1714"
+		},
+		{
+			"teamname": "Cobra Kai",
+			"scratchTotal": "1621"
+		},
+		{
+			"teamname": "Spare Me",
+			"scratchTotal": "1585"
+		},
+		{
+			"teamname": "Long Shots",
+			"scratchTotal": "2339"
+		},
+		{
+			"teamname": "Livin' On a Spare",
+			"scratchTotal": "1710"
+		},
+		{
+			"teamname": "Yah Beeches",
+			"scratchTotal": "2287"
+		},
+		{
+			"teamname": "Up Your Average",
+			"scratchTotal": "2394"
+		}
+	],
+	"Week Twelve":[
+		{
+			"teamname": "All Night Long",
+			"scratchTotal": "1848"
+		},
+		{
+			"teamname": "Pocket Pounders",
+			"scratchTotal": "2312"
+		},
+		{
+			"teamname": "Holy Schtrikies!",
+			"scratchTotal": "1802"
+		},
+		{
+			"teamname": "Thirsty Thursday",
+			"scratchTotal": "1815"
+		},
+		{
+			"teamname": "Tae Bowlers",
+			"scratchTotal": "1773"
+		},
+		{
+			"teamname": "Rotary South",
+			"scratchTotal": "1851"
+		},
+		{
+			"teamname": "Cobra Kai",
+			"scratchTotal": "1897"
+		},
+		{
+			"teamname": "Spare Me",
+			"scratchTotal": "1824"
+		},
+		{
+			"teamname": "Long Shots",
+			"scratchTotal": "2227"
+		},
+		{
+			"teamname": "Livin' On a Spare",
+			"scratchTotal": "1555"
+		},
+		{
+			"teamname": "Yah Beeches",
+			"scratchTotal": "2089"
+		},
+		{
+			"teamname": "Up Your Average",
+			"scratchTotal": "2023"
+		}
+	]
+}
