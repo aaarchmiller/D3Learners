@@ -91,13 +91,9 @@ function setupPlot(plot, data, yvar) {
 	axesDetails.append("g")
           .classed("x-axis", true)
           .attr("transform", "translate(" + 0 + "," + plotheight + ")")
-          .transition()
-          .duration(duration_time)
           .call(xAxis);
     axesDetails.append("g")
           .classed("y-axis", true)
-          .transition()
-          .duration(duration_time)
 		  .call(yAxis);
 
 	 // setup line function
@@ -209,17 +205,19 @@ function updatePlot(plot, data, yvar) {
 
 	plot.selectAll(".datapt")
 		.data(data)
-		//.enter()
-		//.append("circle")
+		.transition()
+		.duration(duration_time)
+		//.delay(function(d, i) { return i * 10; })
 		.attr("r", 3)
 		.attr("cx", function(d) { return xScale(d.startyear); })
 		.attr("cy", function(d) { return yScale(d[yvar]); })
 		.style("fill", function(d) { return colorScale(d.team); });	
 
 	plot.selectAll(".teamline")
-		.data(databyteam)
-		//.enter()
-  		//.append("path")
+		.data(databyteam)  
+		.transition()
+		.duration(duration_time)
+		.delay(function(d, i) { return duration_time/i * 10; })
 		.attr("d", function(d) { return buildLine(d.values); })
 		.style("stroke", function(d) { return colorScale(d.key); })
 		.style("fill", "none");
