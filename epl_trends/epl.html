@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>English Premier League Data Exploration</title>
+    <meta charset="utf-8">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <!-- <script src="d3.v4.min.js"></script>  -->
+    <!-- <script src="https://d3js.org/d3-queue.v3.min.js"></script> -->
+    <script src="process_json_data.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+    <div id="content"> 
+      <h1>English Premier League</h1>
+      <form>
+        <label for="yaxis">Data</label>
+        <select id="yaxis">
+          <option>Rank</option>
+          <option>Wins</option>
+          <option>Draws</option>
+          <option>Losses</option>
+          <option>Goal Differential</option>
+        </select>
+      </form>    
+    </div>
+    <div id="tooltip" class="hidden">
+        <p> <strong><span id="teamName"></span></strong></p>
+    </div> 
+    <script>
+
+      // setup
+      var h = 600;
+      var w = 1300;
+      var margin = {
+        top: 20,
+        bottom: 60,
+        left: 60,
+        right: 60
+      };
+      var plotwidth = w - margin.left - margin.right;
+      var plotheight = h - margin.top - margin.bottom;
+      var duration_time = 600;
+      
+      // create an svg element
+      var svg = d3.select("body")
+          .append("svg")
+          .attr("id", "plotarea") // id == #plot in css, class == .plot in css
+          .attr("width", w)
+          .attr("height", h);
+      var plotarea = svg.append("g")
+          .classed("plot", true)
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+      // x and y scales
+      var xScale = d3.scaleBand().range([0, plotwidth])
+          yScale = d3.scaleLinear().range([0, plotheight])
+          colorScale = d3.scaleOrdinal(d3.schemeCategory20);
+
+      var xAxis = d3.axisBottom(xScale);
+      var yAxis = d3.axisLeft(yScale);
+
+      // add axes
+      var axesDetails = plotarea.append("g")
+          .attr("id", "axesDetails");
+
+      var plot = load_data();
+
+    </script>
+  </body>
+</html>
