@@ -22,7 +22,6 @@
           <option>Losses</option>
           <option>Goal Differential</option>
         </select>
-        <input type="submit" value="Update"/>
       </form>    
     </div>
     <div id="tooltip" class="hidden">
@@ -41,7 +40,7 @@
       };
       var plotwidth = w - margin.left - margin.right;
       var plotheight = h - margin.top - margin.bottom;
-      var duration_time = 1000;
+      var duration_time = 600;
       
       // create an svg element
       var svg = d3.select("body")

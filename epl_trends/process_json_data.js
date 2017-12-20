@@ -62,7 +62,7 @@ function combineData(error, seasons) {
 	var yvar = document.getElementById("yaxis").value.toLowerCase();
 	plotarea = setupPlot(plotarea, merged_data, yvar);
 
-	d3.select("form").on("submit", function(d) {
+	d3.select("form").on("change", function(d) {
 		
         var new_yvar = document.getElementById("yaxis").value.toLowerCase();
         if(new_yvar == "goal differential") {
@@ -217,7 +217,7 @@ function updatePlot(plot, data, yvar) {
 		.data(databyteam)  
 		.transition()
 		.duration(duration_time)
-		.delay(function(d, i) { return duration_time/i * 10; })
+		.delay(function(d, i) { return i * 10; })
 		.attr("d", function(d) { return buildLine(d.values); })
 		.style("stroke", function(d) { return colorScale(d.key); })
 		.style("fill", "none");
