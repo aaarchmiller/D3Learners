@@ -17,7 +17,7 @@ function load_data() {
 		q.defer(parseEPLJson, url, s);
 	});
 
-	return q.await(combineData);
+	q.await(combineData);
 	
 }
 
@@ -60,9 +60,8 @@ function combineData(error, seasons) {
 	
 	// this is where you put code to use merged_data!!!!!!!!!!!!!!!!!!!!!!
 	var yvar = document.getElementById("yaxis").value.toLowerCase();
-	plotarea = addDataToPlot(plotarea, merged_data, yvar);
+	plotarea = setupPlot(plotarea, merged_data, yvar);
 
-	
 	d3.select("form").on("submit", function(d) {
 		
         var new_yvar = document.getElementById("yaxis").value.toLowerCase();
@@ -76,40 +75,35 @@ function combineData(error, seasons) {
     	d3.event.preventDefault(); 
     });
 
-	return plotarea;
 }
 
-function addDataToPlot(plot, data, yvar) {
+function setupPlot(plot, data, yvar) {
 	
 	// add to scaling functions based on data
 	var ymax = d3.max(data, function(d) { return d[yvar]; })
 		uniqueyears = d3.map(data, function(d){ return d.startyear; }).keys()
 		uniqueteams = d3.map(data, function(d){ return d.team; }).keys();
 	xScale.domain(uniqueyears); 
-	yScale.domain([ymax, 0]);
+	yScale.domain([1, ymax]); //axes inverted to start for "Rank"
 	colorScale.domain(uniqueteams);
 
 	// add axes
 	axesDetails.append("g")
-          .attr("id", "xAxis")
+          .classed("x-axis", true)
           .attr("transform", "translate(" + 0 + "," + plotheight + ")")
-          .classed("axis", true)
           .transition()
           .duration(duration_time)
           .call(xAxis);
     axesDetails.append("g")
-          .attr("id", "yAxis")
-          .classed("axis", true)
+          .classed("y-axis", true)
           .transition()
           .duration(duration_time)
-          .call(yAxis);
+		  .call(yAxis);
 
-    axesDetails.exit().remove();
-
-	// setup line function
-	var buildLine = d3.line().curve(d3.curveCardinal)
-		.x(function(d) { return xScale(d.startyear); })
-		.y(function(d) { return yScale(d[yvar]); });
+	 // setup line function
+	 var buildLine = d3.line().curve(d3.curveCardinal)
+			.x(function(d) { return xScale(d.startyear); })
+			.y(function(d) { return yScale(d[yvar]); });
 
 	// organize data by team
 	var databyteam = d3.nest()
@@ -118,21 +112,21 @@ function addDataToPlot(plot, data, yvar) {
     
 	// add points
 	var pts_g = plot.append("g");
-	var pts = pts_g.selectAll(".datapt").data(data);
-
-	pts.enter()
+	pts_g.selectAll(".datapt")
+		.data(data)
+		.enter()
 		.append("circle")
 		.attr("class", "datapt")
 		.attr("r", 3)
 		.attr("cx", function(d) { return xScale(d.startyear); })
 		.attr("cy", function(d) { return yScale(d[yvar]); })
-		.style("fill", function(d) { return colorScale(d.team); });
-		
+		.style("fill", function(d) { return colorScale(d.team); });	
+	
 	// add lines
 	var lines_g = plot.append("g");
-	var lines = lines_g.selectAll(".teamline").data(databyteam);
-
-  	lines.enter()
+	lines_g.selectAll(".teamline")
+		.data(databyteam)
+		.enter()
   		.append("path")
 		.attr("class", "teamline")
 		.attr("d", function(d) { return buildLine(d.values); })
@@ -142,6 +136,7 @@ function addDataToPlot(plot, data, yvar) {
 	// update phase????
 	lines_g.selectAll(".teamline")
 		.on("mouseover", function(d) {
+			console.log(d);
 			//var this_color = d3.select(this).style("stroke");
 			//d3.selectAll(".teamline").style("stroke", "grey");
 			//d3.select(this).style("stroke", this_color);
@@ -152,9 +147,11 @@ function addDataToPlot(plot, data, yvar) {
 			// add text element
 			d3.select("#tooltip")
 				.style("display", "block")
+				.style("position", "absolute")
 				.style("left", x_val+"px")
 				.style("top", y_val+"px")
-				.select("#teamName").text("hello!");
+				.select("#teamName")
+				.text(d.key);
 
 		})
 		.on("mouseout", function(d,i) {
@@ -163,34 +160,72 @@ function addDataToPlot(plot, data, yvar) {
 			d3.selectAll("#tooltip").style("display", "none");//.remove();
 		})
 
-	pts.exit().remove();
-	lines.exit().remove();
-
 	//console.log(databyteam);
 	return plot;
 }
 
 function updatePlot(plot, data, yvar) {
-	
+
 	// add to scaling functions based on data
-	var ymax = d3.max(data, function(d) { return d[yvar]; });
-	yScale.domain([ymax, 0]);
+	var uniqueyears = d3.map(data, function(d){ return d.startyear; }).keys()
+		uniqueteams = d3.map(data, function(d){ return d.team; }).keys();
+	xScale.domain(uniqueyears); 
 
-	// update y axis
-	plot.select("#yAxis")
-		.duration(duration_time)
-		.call(yAxis);
+	// ymin and ymax vary based on the type of data
+	// defaults for "Rank" are inverted
+	var ymin = d3.max(data, function(d) { return d[yvar]; }),
+		ymax = 1;
+	if(yvar == "goals-dff") {
+		ymin = d3.min(data, function(d) { return d[yvar]; });
+		ymax = d3.max(data, function(d) { return d[yvar]; });
+	} else if(yvar.match(/^(losses|draws|wins)$/)){
+		ymin = 0;
+		ymax = d3.max(data, function(d) { return d[yvar]; });
+	}
 
-	// update pts
-	plot.selectAll(".datapts")
-		.duration(duration_time)
-		.attr("cy", function(d) { return yScale(d[yvar]); });
+	yScale.domain([ymax, ymin]);
+	colorScale.domain(uniqueteams);
+		  
+	plot.select(".x-axis")
+          .transition()
+          .duration(duration_time)
+          .call(xAxis);
+	plot.select(".y-axis")
+          .transition()
+          .duration(duration_time)
+          .call(yAxis);
 
-	// update lines
+	plot.select(".x-axis .y-axis").exit().remove();
+
+	// setup line function
+	var buildLine = d3.line().curve(d3.curveCardinal)
+			.x(function(d) { return xScale(d.startyear); })
+			.y(function(d) { return yScale(d[yvar]); });
+
+	// organize data by team
+	var databyteam = d3.nest()
+    	.key(function(d) { return d.team; })
+    	.entries(data);
+
+	plot.selectAll(".datapt")
+		.data(data)
+		//.enter()
+		//.append("circle")
+		.attr("r", 3)
+		.attr("cx", function(d) { return xScale(d.startyear); })
+		.attr("cy", function(d) { return yScale(d[yvar]); })
+		.style("fill", function(d) { return colorScale(d.team); });	
+
 	plot.selectAll(".teamline")
-		.duration(duration_time)
-		.attr("d", function(d) { return buildLine(d.values); });
+		.data(databyteam)
+		//.enter()
+  		//.append("path")
+		.attr("d", function(d) { return buildLine(d.values); })
+		.style("stroke", function(d) { return colorScale(d.key); })
+		.style("fill", "none");
+
+	plot.selectAll(".datapt").exit().remove();
+	plot.selectAll(".teamline").exit().remove();
 
 	return plot;
 }
-
