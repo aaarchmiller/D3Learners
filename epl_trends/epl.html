@@ -8,7 +8,29 @@
     <!-- <script src="https://d3js.org/d3-queue.v3.min.js"></script> -->
     <script src="process_json_data.js"></script>
     <style>
-      
+    
+    h1 { 
+      color: #111; 
+      font-family: 'Helvetica Neue', sans-serif; 
+      font-size: 30px; 
+      font-weight: bold; 
+      letter-spacing: -1px; 
+      line-height: 1; 
+      text-align: left; 
+    }
+
+    .dropdown {
+    background-color: rgb(8, 122, 189); 
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    }
+
     .xgrid line,
     .xgrid path,
     .ygrid line,
@@ -16,14 +38,15 @@
       stroke: #ddd;
     }
 
+}
+
     </style>
   </head>
   <body>
     <div id="content"> 
-      <h1>English Premier League</h1>
+      <h1>English Premier League Data Exploration</h1>
       <form>
-        <label for="yaxis">Data</label>
-        <select id="yaxis">
+        <select id="yaxis" class="dropdown">
           <option>Rank</option>
           <option>Wins</option>
           <option>Draws</option>
