@@ -90,12 +90,24 @@ function setupPlot(plot, data, yvar) {
 	// add axes
 	axesDetails.append("g")
           .classed("x-axis", true)
-          .attr("transform", "translate(" + 0 + "," + plotheight + ")")
+		  .attr("transform", "translate(" + 0 + "," + plotheight + ")")
           .call(xAxis);
     axesDetails.append("g")
           .classed("y-axis", true)
 		  .call(yAxis);
-
+	
+	// add grid lines
+	plot.append("g")
+		.attr("class", "xgrid")
+		.call(make_x_gridlines);
+	plot.select(".xgrid")
+		.style("stroke", "#73c0d2");
+	plot.append("g")
+		.attr("class", "ygrid")
+		.call(make_y_gridlines);
+	plot.select(".ygrid")
+		.style("stroke", "#73c0d2");
+		
 	 // setup line function
 	 var buildLine = d3.line().curve(d3.curveCardinal)
 			.x(function(d) { return xScale(d.startyear); })
@@ -205,7 +217,17 @@ function updatePlot(plot, data, yvar) {
 	plot.select(".y-axis")
           .transition()
           .duration(duration_time)
-          .call(yAxis);
+		  .call(yAxis);
+		  
+	// add grid lines
+	plot.select(".xgrid")
+		.transition()
+		.duration(duration_time)
+	 	.call(make_x_gridlines);
+	plot.select(".ygrid")
+		.transition()
+		.duration(duration_time)
+		.call(make_y_gridlines);
 
 	plot.select(".x-axis .y-axis").exit().remove();
 

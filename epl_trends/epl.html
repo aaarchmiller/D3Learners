@@ -8,6 +8,12 @@
     <!-- <script src="https://d3js.org/d3-queue.v3.min.js"></script> -->
     <script src="process_json_data.js"></script>
     <style>
+      
+    .xgrid,
+    .ygrid {
+      stroke: #ddd;
+    }
+
     </style>
   </head>
   <body>
@@ -63,6 +69,18 @@
       // add axes
       var axesDetails = plotarea.append("g")
           .attr("id", "axesDetails");
+
+      // gridlines in x axis function
+      var make_x_gridlines = d3.axisBottom()
+            .tickSize(plotheight)
+            .tickFormat("")
+            .scale(xScale);
+
+      // gridlines in y axis function
+      var make_y_gridlines = d3.axisLeft()
+            .tickSize(-plotwidth)
+            .tickFormat("")
+            .scale(yScale);
 
       var plot = load_data();
 
