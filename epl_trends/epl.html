@@ -68,6 +68,10 @@
       var xAxis = d3.axisBottom(xScale);
       var yAxis = d3.axisLeft(yScale);
 
+      // add gridlines group before axes so axes are overtop of grid
+      var gridDetails = plotarea.append("g")
+          .attr("id", "grid");
+
       // add axes
       var axesDetails = plotarea.append("g")
           .attr("id", "axesDetails");

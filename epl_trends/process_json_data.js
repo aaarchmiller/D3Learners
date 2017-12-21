@@ -87,6 +87,14 @@ function setupPlot(plot, data, yvar) {
 	yScale.domain([1, ymax]); //axes inverted to start for "Rank"
 	colorScale.domain(uniqueteams);
 
+	// add grid lines (before axes so that axes are plotted over top)
+	gridDetails.append("g")
+		.attr("class", "xgrid")
+		.call(make_x_gridlines);
+	gridDetails.append("g")
+		.attr("class", "ygrid")
+		.call(make_y_gridlines);
+
 	// add axes
 	axesDetails.append("g")
           .classed("x-axis", true)
@@ -95,18 +103,6 @@ function setupPlot(plot, data, yvar) {
     axesDetails.append("g")
           .classed("y-axis", true)
 		  .call(yAxis);
-	
-	// add grid lines
-	plot.append("g")
-		.attr("class", "xgrid")
-		.call(make_x_gridlines);
-	plot.select(".xgrid")
-		.style("stroke", "#73c0d2");
-	plot.append("g")
-		.attr("class", "ygrid")
-		.call(make_y_gridlines);
-	plot.select(".ygrid")
-		.style("stroke", "#73c0d2");
 		
 	 // setup line function
 	 var buildLine = d3.line().curve(d3.curveCardinal)
@@ -210,16 +206,7 @@ function updatePlot(plot, data, yvar) {
 	yScale.domain([ymax, ymin]);
 	colorScale.domain(uniqueteams);
 		  
-	plot.select(".x-axis")
-          .transition()
-          .duration(duration_time)
-          .call(xAxis);
-	plot.select(".y-axis")
-          .transition()
-          .duration(duration_time)
-		  .call(yAxis);
-		  
-	// add grid lines
+	// add grid lines (before axes so that axes are plotted over top)
 	plot.select(".xgrid")
 		.transition()
 		.duration(duration_time)
@@ -228,6 +215,15 @@ function updatePlot(plot, data, yvar) {
 		.transition()
 		.duration(duration_time)
 		.call(make_y_gridlines);
+
+	plot.select(".x-axis")
+          .transition()
+          .duration(duration_time)
+          .call(xAxis);
+	plot.select(".y-axis")
+          .transition()
+          .duration(duration_time)
+		  .call(yAxis);
 
 	plot.select(".x-axis .y-axis").exit().remove();
 
