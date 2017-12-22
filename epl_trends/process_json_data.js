@@ -89,10 +89,12 @@ function setupPlot(plot, data, yvar) {
 
 	// add grid lines (before axes so that axes are plotted over top)
 	gridDetails.append("g")
-		.attr("class", "xgrid")
+		.classed('gridlines', true)
+		.classed('xgrid', true)
 		.call(make_x_gridlines);
 	gridDetails.append("g")
-		.attr("class", "ygrid")
+		.classed('gridlines', true)
+		.classed('ygrid', true)
 		.call(make_y_gridlines);
 
 	// add axes
@@ -105,7 +107,7 @@ function setupPlot(plot, data, yvar) {
 		  .call(yAxis);
 		
 	 // setup line function
-	 var buildLine = d3.line().curve(d3.curveCardinal)
+	 var buildLine = d3.line()//.curve(d3.curveCardinal)
 			.x(function(d) { return xScale(d.startyear); })
 			.y(function(d) { return yScale(d[yvar]); });
 
@@ -228,7 +230,7 @@ function updatePlot(plot, data, yvar) {
 	plot.select(".x-axis .y-axis").exit().remove();
 
 	// setup line function
-	var buildLine = d3.line().curve(d3.curveCardinal)
+	var buildLine = d3.line()//.curve(d3.curveCardinal)
 			.x(function(d) { return xScale(d.startyear); })
 			.y(function(d) { return yScale(d[yvar]); });
 
