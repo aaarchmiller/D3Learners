@@ -87,17 +87,25 @@ function setupPlot(plot, data, yvar) {
 	yScale.domain([1, ymax]); //axes inverted to start for "Rank"
 	colorScale.domain(uniqueteams);
 
+	// add grid lines (before axes so that axes are plotted over top)
+	gridDetails.append("g")
+		.classed('xgrid gridlines', true)
+		.call(make_x_gridlines);
+	gridDetails.append("g")
+		.classed('ygrid gridlines', true)
+		.call(make_y_gridlines);
+
 	// add axes
 	axesDetails.append("g")
           .classed("x-axis", true)
-          .attr("transform", "translate(" + 0 + "," + plotheight + ")")
+		  .attr("transform", "translate(" + 0 + "," + plotheight + ")")
           .call(xAxis);
     axesDetails.append("g")
           .classed("y-axis", true)
 		  .call(yAxis);
-
+		
 	 // setup line function
-	 var buildLine = d3.line().curve(d3.curveCardinal)
+	 var buildLine = d3.line()//.curve(d3.curveCardinal)
 			.x(function(d) { return xScale(d.startyear); })
 			.y(function(d) { return yScale(d[yvar]); });
 
@@ -128,15 +136,27 @@ function setupPlot(plot, data, yvar) {
 		.attr("d", function(d) { return buildLine(d.values); })
 		.style("stroke", function(d) { return colorScale(d.key); })
 		.style("fill", "none");
+		
+	var hoverlines_g = plot.append("g");
+	hoverlines_g.selectAll(".teamlineinvisible")
+		.data(databyteam)
+		.enter()
+		.append("path")
+		.attr("class", "teamlineinvisible")
+		.attr("d", function(d) { return buildLine(d.values); })
+		.style('stroke-width', "10px")
+		.style('stroke', 'transparent')
+		.style("fill", "none");
 
 	// update phase????
-	lines_g.selectAll(".teamline")
+	hoverlines_g.selectAll(".teamlineinvisible")
 		.on("mouseover", function(d) {
 			console.log(d);
 			//var this_color = d3.select(this).style("stroke");
 			//d3.selectAll(".teamline").style("stroke", "grey");
 			//d3.select(this).style("stroke", this_color);
-			d3.select(this).style("stroke-width", 5);			// determine location of mouse
+			d3.select(this).style('stroke-width', "6px")
+				.style("stroke", function(d) { return colorScale(d.key); });			// determine location of mouse
 			var x_val = d3.event.pageX; //xScale(d.startyear); //
 			var y_val = d3.event.pageY; //yScale(d[yvar]); //
 			console.log(x_val, y_val);
@@ -146,14 +166,18 @@ function setupPlot(plot, data, yvar) {
 				.style("position", "absolute")
 				.style("left", x_val+"px")
 				.style("top", y_val+"px")
+				.style("pointer-events", "none")
 				.select("#teamName")
 				.text(d.key);
 
 		})
 		.on("mouseout", function(d,i) {
-			//d3.selectAll(".teamline").style("stroke", colorScale(d.key));
-			d3.select(this).style("stroke-width", 1);
-			d3.selectAll("#tooltip").style("display", "none");//.remove();
+			d3.select(this)
+				.style('stroke-width', "10px")
+				.style('stroke', 'transparent');
+			d3.selectAll("#tooltip")
+				.style("display", "none")
+				.style("pointer-events", "none");
 		})
 
 	//console.log(databyteam);
@@ -182,6 +206,16 @@ function updatePlot(plot, data, yvar) {
 	yScale.domain([ymax, ymin]);
 	colorScale.domain(uniqueteams);
 		  
+	// add grid lines (before axes so that axes are plotted over top)
+	plot.select(".xgrid")
+		.transition()
+		.duration(duration_time)
+	 	.call(make_x_gridlines);
+	plot.select(".ygrid")
+		.transition()
+		.duration(duration_time)
+		.call(make_y_gridlines);
+
 	plot.select(".x-axis")
           .transition()
           .duration(duration_time)
@@ -189,12 +223,12 @@ function updatePlot(plot, data, yvar) {
 	plot.select(".y-axis")
           .transition()
           .duration(duration_time)
-          .call(yAxis);
+		  .call(yAxis);
 
 	plot.select(".x-axis .y-axis").exit().remove();
 
 	// setup line function
-	var buildLine = d3.line().curve(d3.curveCardinal)
+	var buildLine = d3.line()//.curve(d3.curveCardinal)
 			.x(function(d) { return xScale(d.startyear); })
 			.y(function(d) { return yScale(d[yvar]); });
 
@@ -222,8 +256,17 @@ function updatePlot(plot, data, yvar) {
 		.style("stroke", function(d) { return colorScale(d.key); })
 		.style("fill", "none");
 
+	plot.selectAll(".teamlineinvisible")
+		.data(databyteam)
+		.attr("class", "teamlineinvisible")
+		.attr("d", function(d) { return buildLine(d.values); })
+		.style('stroke-width', "10px")
+		.style('stroke', 'transparent')
+		.style("fill", "none");
+
 	plot.selectAll(".datapt").exit().remove();
 	plot.selectAll(".teamline").exit().remove();
+	plot.selectAll(".teamlineinvisible").exit().remove();
 
 	return plot;
 }

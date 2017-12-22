@@ -8,14 +8,47 @@
     <!-- <script src="https://d3js.org/d3-queue.v3.min.js"></script> -->
     <script src="process_json_data.js"></script>
     <style>
+    
+    h1 { 
+      color: #111; 
+      font-family: 'Helvetica Neue', sans-serif; 
+      font-size: 30px; 
+      font-weight: bold; 
+      letter-spacing: -1px; 
+      line-height: 1; 
+      text-align: left; 
+    }
+
+    .dropdown {
+    background-color: rgb(8, 122, 189); 
+    border: none;
+    border-radius: 4px;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    }
+
+    .gridlines line,
+    .gridlines path {
+      stroke: #ddd;
+    }
+
+    #tooltip {
+      pointer-events: none;
+    }
+
+}
+
     </style>
   </head>
   <body>
     <div id="content"> 
-      <h1>English Premier League</h1>
+      <h1>English Premier League Data Exploration</h1>
       <form>
-        <label for="yaxis">Data</label>
-        <select id="yaxis">
+        <select id="yaxis" class="dropdown">
           <option>Rank</option>
           <option>Wins</option>
           <option>Draws</option>
@@ -60,9 +93,25 @@
       var xAxis = d3.axisBottom(xScale);
       var yAxis = d3.axisLeft(yScale);
 
+      // add gridlines group before axes so axes are overtop of grid
+      var gridDetails = plotarea.append("g")
+          .attr("id", "grid");
+
       // add axes
       var axesDetails = plotarea.append("g")
           .attr("id", "axesDetails");
+
+      // gridlines in x axis function
+      var make_x_gridlines = d3.axisBottom()
+            .tickSize(plotheight)
+            .tickFormat("")
+            .scale(xScale);
+
+      // gridlines in y axis function
+      var make_y_gridlines = d3.axisLeft()
+            .tickSize(-plotwidth)
+            .tickFormat("")
+            .scale(yScale);
 
       var plot = load_data();
 
