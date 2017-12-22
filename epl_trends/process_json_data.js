@@ -89,12 +89,10 @@ function setupPlot(plot, data, yvar) {
 
 	// add grid lines (before axes so that axes are plotted over top)
 	gridDetails.append("g")
-		.classed('gridlines', true)
-		.classed('xgrid', true)
+		.classed('xgrid gridlines', true)
 		.call(make_x_gridlines);
 	gridDetails.append("g")
-		.classed('gridlines', true)
-		.classed('ygrid', true)
+		.classed('ygrid gridlines', true)
 		.call(make_y_gridlines);
 
 	// add axes
