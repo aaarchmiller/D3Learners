@@ -275,7 +275,7 @@ d3.json('json/map.json', function(mapError, mapData){
 				//Set Image
 				var playerImage = player.split(' ')[1] + '.png';
 				$('#playerPicture > img').remove();
-				$('#playerPicture').append('<img src="img/' + playerImage + '"/>');
+				$('#playerPicture').append('<img src="img/' + playerImage.toLowerCase() + '"/>');
 
 				//Set playerInfo Name
 				d3.select('#playerInfo .name').text(function(){
