@@ -1,0 +1,910 @@
+{
+	"players": {
+		"Joe Mauer": {
+			"number": 7,
+			"position": "1B",
+			"bats": "Left",
+			"throws": "Right",
+			"height": "6'5",
+			"weight": "225lbs",
+			"age": "34"
+		},
+		"Brian Dozier": {
+			"number": 2,
+			"position": "2B",
+			"bats": "Right",
+			"throws": "Right",
+			"height": "5'11",
+			"weight": "198lbs",
+			"age": "30"
+		},
+		"Eduardo Escobar":{
+			"number": 5,
+			"position": "3B/2B/SS",
+			"bats": "Switch",
+			"throws": "Right",
+			"height": "5'10",
+			"weight": "185lbs",
+			"age": "28"
+		},
+		"Eddie Rosario":{
+			"number": 20,
+			"position": "LF",
+			"bats": "Left",
+			"throws": "Right",
+			"height": "6'1",
+			"weight": "180lbs",
+			"age": "26"
+		},
+		"Miguel Sano":{
+			"number": 22,
+			"position": "3B",
+			"bats": "Right",
+			"throws": "Right",
+			"height": "6'4",
+			"weight": "262lbs",
+			"age": "24"
+		},
+		"Byron Buxton":{
+			"number": 25,
+			"position": "CF",
+			"bats": "Right",
+			"throws": "Right",
+			"height": "6'2",
+			"weight": "189lbs",
+			"age": "24"
+		}
+	},
+	"stadiums": [
+		{
+			"name": "Angel Stadium",
+			"location": "Anaheim, CA",
+			"capicity": 45050,
+			"teamName": "Los Angeles Angels",
+			"lat": "33.8003",
+			"lon": "-117.8827",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".294",
+					"Brian Dozier": ".111",
+					"Eduardo Escobar": ".600",
+					"Eddie Rosario": ".133",
+					"Miguel Sano": ".412",
+					"Byron Buxton": ".091"
+				},
+				"2016":{
+					"Joe Mauer": ".357",
+					"Brian Dozier": ".222",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".273"
+				},
+				"2015":{
+					"Joe Mauer": ".333",
+					"Brian Dozier": ".111",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".182",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "AT&T Park",
+			"location": "San Fransico, CA",
+			"capicity": 41915,
+			"teamName": "San Fransico Giants",
+			"lat": "37.7749",
+			"lon": "-122.4194",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".143",
+					"Brian Dozier": ".400",
+					"Eduardo Escobar": ".375",
+					"Eddie Rosario": ".111",
+					"Miguel Sano": ".077",
+					"Byron Buxton": ".333"
+				},
+				"2016":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2015":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "Busch Stadium II",
+			"location": "St. Louis, MO",
+			"capicity": 45538,
+			"teamName": "St. Louis Cardinals",
+			"lat": "38.6226",
+			"lon": "-90.1928",
+			"years": {
+				"2017":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2016":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2015": {
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".286",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".333"
+				}
+			}
+		},
+		{
+			"name": "Camden Yards",
+			"location": "Baltimore, MD",
+			"capicity": 45971,
+			"teamName": "Baltimore Orioles",
+			"lat": "39.2839",
+			"lon": "-76.6222",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".333",
+					"Brian Dozier": ".357",
+					"Eduardo Escobar": ".333",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".267",
+					"Byron Buxton": ".364"
+				},
+				"2016":{
+					"Joe Mauer": ".364",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".417",
+					"Eddie Rosario": ".167",
+					"Miguel Sano": ".200",
+					"Byron Buxton": ".200"
+				},
+				"2015":{
+					"Joe Mauer": ".294",
+					"Brian Dozier": ".263",
+					"Eduardo Escobar": ".308",
+					"Eddie Rosario": ".250",
+					"Miguel Sano": ".313",
+					"Byron Buxton": ".238"
+				}
+			}
+		},
+		{
+			"name": "Comerica Park",
+			"location": "Detroit, MI",
+			"capicity": 41297,
+			"teamName": "Detroit Tigers",
+			"lat": "42.3390",
+			"lon": "-83.0485",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".368",
+					"Brian Dozier": ".378",
+					"Eduardo Escobar": ".200",
+					"Eddie Rosario": ".300",
+					"Miguel Sano": ".240",
+					"Byron Buxton": ".286"
+				},
+				"2016":{
+					"Joe Mauer": ".138",
+					"Brian Dozier": ".270",
+					"Eduardo Escobar": ".063",
+					"Eddie Rosario": ".269",
+					"Miguel Sano": ".200",
+					"Byron Buxton": ".143"
+				},
+				"2015":{
+					"Joe Mauer": ".206",
+					"Brian Dozier": ".278",
+					"Eduardo Escobar": ".200",
+					"Eddie Rosario": ".067",
+					"Miguel Sano": ".167",
+					"Byron Buxton": ".500"
+				}
+			}
+		},
+		{
+			"name": "Dodger Stadium",
+			"location": "Los Angeles, CA",
+			"capicity": 56000,
+			"teamName": "L.A. Dodgers",
+			"lat": "34.0739",
+			"lon": "-118.2400",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".333",
+					"Brian Dozier": ".154",
+					"Eduardo Escobar": ".182",
+					"Eddie Rosario": ".364",
+					"Miguel Sano": ".200",
+					"Byron Buxton": ".000"
+				},
+				"2016":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2015":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "Fenway Park",
+			"location": "Boston, MA",
+			"capicity": 37731,
+			"teamName": "Boston Red Sox",
+			"lat": "42.3467",
+			"lon": "-71.0972",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".385",
+					"Brian Dozier": ".235",
+					"Eduardo Escobar": ".167",
+					"Eddie Rosario": ".300",
+					"Miguel Sano": ".067",
+					"Byron Buxton": ".091"
+				},
+				"2016":{
+					"Joe Mauer": ".083",
+					"Brian Dozier": ".357",
+					"Eduardo Escobar": ".200",
+					"Eddie Rosario": ".455",
+					"Miguel Sano": ".412",
+					"Byron Buxton": ".273"
+				},
+				"2015":{
+					"Joe Mauer": ".077",
+					"Brian Dozier": ".333",
+					"Eduardo Escobar": ".133",
+					"Eddie Rosario": ".182",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "Great American Ballpark",
+			"location": "Cincinnati, OH",
+			"capicity": 42319,
+			"teamName": "Cincinnati, OH",
+			"lat": "39.0979",
+			"lon": "-84.5082",
+			"years": {
+				"2017":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2016":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2015":{
+					"Joe Mauer": ".333",
+					"Brian Dozier": ".286",
+					"Eduardo Escobar": ".333",
+					"Eddie Rosario": ".333",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "Kauffman Stadium",
+			"location": "Kansas City, MO",
+			"capicity": 37903,
+			"teamName": "Kansas City Royals",
+			"lat": "39.0517",
+			"lon": "-94.4803",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".237",
+					"Brian Dozier": ".171",
+					"Eduardo Escobar": ".276",
+					"Eddie Rosario": ".395",
+					"Miguel Sano": ".400",
+					"Byron Buxton": ".200"
+				},
+				"2016":{
+					"Joe Mauer": ".190",
+					"Brian Dozier": ".216",
+					"Eduardo Escobar": ".370",
+					"Eddie Rosario": ".273",
+					"Miguel Sano": ".088",
+					"Byron Buxton": ".200"
+				},
+				"2015":{
+					"Joe Mauer": ".421",
+					"Brian Dozier": ".175",
+					"Eduardo Escobar": ".304",
+					"Eddie Rosario": ".185",
+					"Miguel Sano": ".368",
+					"Byron Buxton": ".250"
+				}
+			}
+		},
+		{
+			"name": "Miller Park",
+			"location": "Milwaukee, WI",
+			"capicity": 46218,
+			"teamName": "Milwaukee Brewers",
+			"lat": "43.0280",
+			"lon": "-87.9712",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".300",
+					"Brian Dozier": ".333",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".167",
+					"Miguel Sano": ".333",
+					"Byron Buxton": ".429"
+				},
+				"2016":{
+					"Joe Mauer": ".333",
+					"Brian Dozier": ".222",
+					"Eduardo Escobar": ".250",
+					"Eddie Rosario": ".714",
+					"Miguel Sano": ".667",
+					"Byron Buxton": ".250"
+				},
+				"2015":{
+					"Joe Mauer": ".364",
+					"Brian Dozier": ".417",
+					"Eduardo Escobar": ".400",
+					"Eddie Rosario": ".091",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "Minute Maid Park",
+			"location": "Houston, TX",
+			"capicity": 41676,
+			"teamName": "Houston Astros",
+			"lat": "29.7573",
+			"lon": "-95.3555",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".200",
+					"Brian Dozier": ".385",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".250",
+					"Miguel Sano": ".100",
+					"Byron Buxton": ".500"
+				},
+				"2016":{
+					"Joe Mauer": ".200",
+					"Brian Dozier": ".545",
+					"Eduardo Escobar": ".100",
+					"Eddie Rosario": ".167",
+					"Miguel Sano": ".182",
+					"Byron Buxton": ".000"
+				},
+				"2015":{
+					"Joe Mauer": ".200",
+					"Brian Dozier": ".167",
+					"Eduardo Escobar": ".200",
+					"Eddie Rosario": ".250",
+					"Miguel Sano": ".083",
+					"Byron Buxton": ".167"
+				}
+			}
+		},
+		{
+			"name": "Nationals Park",
+			"location": "Washington, DC",
+			"capicity": 41313,
+			"teamName": "Washinton Nationals",
+			"lat": "38.8730",
+			"lon": "-77.0074",
+			"years": {
+				"2017":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2016":{
+					"Joe Mauer": ".273",
+					"Brian Dozier": ".143",
+					"Eduardo Escobar": ".071",
+					"Eddie Rosario": ".067",
+					"Miguel Sano": ".214",
+					"Byron Buxton": ".125"
+				},
+				"2015":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "Overstock.com Coliseum",
+			"location": "Oakland, CA",
+			"capicity": 63132,
+			"teamName": "Oakland A's",
+			"lat": "37.7516",
+			"lon": "-122.2005",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".200",
+					"Brian Dozier": ".188",
+					"Eduardo Escobar": ".273",
+					"Eddie Rosario": ".167",
+					"Miguel Sano": ".188",
+					"Byron Buxton": ".000"
+				},
+				"2016":{
+					"Joe Mauer": ".250",
+					"Brian Dozier": ".222",
+					"Eduardo Escobar": ".286",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".200",
+					"Byron Buxton": ".250"
+				},
+				"2015":{
+					"Joe Mauer": ".400",
+					"Brian Dozier": ".364",
+					"Eduardo Escobar": ".250",
+					"Eddie Rosario": ".167",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "PETCO Park",
+			"location": "San Diego, CA",
+			"capicity": 42445,
+			"teamName": "San Diego Padres",
+			"lat": "32.7077",
+			"lon": "-117.1569",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".286",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".400",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".375",
+					"Byron Buxton": ".167"
+				},
+				"2016":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2015":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "PNC Park",
+			"location": "Pittsburgh, PA",
+			"capicity": 38362,
+			"teamName": "Pittsburgh Pirates",
+			"lat": "40.4469",
+			"lon": "-80.0057",
+			"years": {
+				"2017":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2016":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2015": {
+					"Joe Mauer": ".300",
+					"Brian Dozier": ".111",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "Progressive Field",
+			"location": "Cleveland, OH",
+			"capicity": 35225,
+			"teamName": "Cleveland Indians",
+			"lat": "41.4962",
+			"lon": "-81.6852",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".323",
+					"Brian Dozier": ".379",
+					"Eduardo Escobar": ".143",
+					"Eddie Rosario": ".375",
+					"Miguel Sano": ".167",
+					"Byron Buxton": ".172"
+				},
+				"2016":{
+					"Joe Mauer": ".409",
+					"Brian Dozier": ".282",
+					"Eduardo Escobar": ".182",
+					"Eddie Rosario": ".353",
+					"Miguel Sano": ".176",
+					"Byron Buxton": ".000"
+				},
+				"2015":{
+					"Joe Mauer": ".310",
+					"Brian Dozier": ".195",
+					"Eduardo Escobar": ".200",
+					"Eddie Rosario": ".333",
+					"Miguel Sano": ".185",
+					"Byron Buxton": ".500"
+				}
+			}
+		},
+		{
+			"name": "Rangers Ballpark in Arlington",
+			"location": "Arlington, TX",
+			"capicity": 49115,
+			"teamName": "Texas Rangers",
+			"lat": "32.7512",
+			"lon": "-97.0825",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".333",
+					"Brian Dozier": ".250",
+					"Eduardo Escobar": ".250",
+					"Eddie Rosario": ".417",
+					"Miguel Sano": ".500",
+					"Byron Buxton": ".429"
+				},
+				"2016":{
+					"Joe Mauer": ".333",
+					"Brian Dozier": ".133",
+					"Eduardo Escobar": ".333",
+					"Eddie Rosario": ".500",
+					"Miguel Sano": ".368",
+					"Byron Buxton": ".250"
+				},
+				"2015":{
+					"Joe Mauer": ".273",
+					"Brian Dozier": ".333",
+					"Eduardo Escobar": ".300",
+					"Eddie Rosario": ".250",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "Rogers Centre",
+			"location": "Toronto, ON",
+			"capicity": 53506,
+			"teamName": "Toronto Blue Jays",
+			"lat": "43.6414",
+			"lon": "-79.3894",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".533",
+					"Brian Dozier": ".286",
+					"Eduardo Escobar": ".154",
+					"Eddie Rosario": ".154",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".538"
+				},
+				"2016":{
+					"Joe Mauer": ".250",
+					"Brian Dozier": ".286",
+					"Eduardo Escobar": ".429",
+					"Eddie Rosario": ".364",
+					"Miguel Sano": ".286",
+					"Byron Buxton": ".000"
+				},
+				"2015":{
+					"Joe Mauer": ".091",
+					"Brian Dozier": ".118",
+					"Eduardo Escobar": ".333",
+					"Eddie Rosario": ".071",
+					"Miguel Sano": ".231",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "Safeco Field",
+			"location": "Seattle, WA",
+			"capicity": 47943,
+			"teamName": "Seattle Mariners",
+			"lat": "47.5914",
+			"lon": "-122.3323",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".308",
+					"Brian Dozier": ".250",
+					"Eduardo Escobar": ".500",
+					"Eddie Rosario": ".250",
+					"Miguel Sano": ".364",
+					"Byron Buxton": ".250"
+				},
+				"2016":{
+					"Joe Mauer": ".417",
+					"Brian Dozier": ".250",
+					"Eduardo Escobar": ".100",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".455",
+					"Byron Buxton": ".000"
+				},
+				"2015":{
+					"Joe Mauer": ".333",
+					"Brian Dozier": ".154",
+					"Eduardo Escobar": ".100",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "Target Field",
+			"location": "Minneapolis, MN",
+			"capicity": 39504,
+			"teamName": "Minnesota Twins",
+			"lat": "44.9817",
+			"lon": "-93.2778",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".300",
+					"Brian Dozier": ".276",
+					"Eduardo Escobar": ".262",
+					"Eddie Rosario": ".332",
+					"Miguel Sano": ".257",
+					"Byron Buxton": ".275"
+				},
+				"2016":{
+					"Joe Mauer": ".265",
+					"Brian Dozier": ".271",
+					"Eduardo Escobar": ".294",
+					"Eddie Rosario": ".193",
+					"Miguel Sano": ".223",
+					"Byron Buxton": ".250"
+				},
+				"2015":{
+					"Joe Mauer": ".253",
+					"Brian Dozier": ".236",
+					"Eduardo Escobar": ".280",
+					"Eddie Rosario": ".315",
+					"Miguel Sano": ".318",
+					"Byron Buxton": ".150"
+				}
+			}
+		},
+		{
+			"name": "Tropicana Field",
+			"location": "St. Petersburg, FL",
+			"capicity": 42735,
+			"teamName": "Tampa Bay Rays",
+			"lat": "27.7682",
+			"lon": "-82.6534",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".250",
+					"Brian Dozier": ".182",
+					"Eduardo Escobar": ".273",
+					"Eddie Rosario": ".143",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".091"
+				},
+				"2016":{
+					"Joe Mauer": ".286",
+					"Brian Dozier": ".286",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".500",
+					"Miguel Sano": ".462",
+					"Byron Buxton": ".000"
+				},
+				"2015":{
+					"Joe Mauer": ".333",
+					"Brian Dozier": ".231",
+					"Eduardo Escobar": ".500",
+					"Eddie Rosario": ".273",
+					"Miguel Sano": ".308",
+					"Byron Buxton": ".308"
+				}
+			}
+		},
+		{
+			"name": "Turner Field",
+			"location": "Atlanta, GA",
+			"capicity": 49586,
+			"teamName": "Atlanta Braves",
+			"lat": "33.7348",
+			"lon": "-84.3900",
+			"years": {
+				"2017":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2016":{
+					"Joe Mauer": ".750",
+					"Brian Dozier": ".300",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".286",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2015":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "U.S. Cellular Field",
+			"location": "Chicago, IL",
+			"capicity": 40615,
+			"teamName": "Chicago White Sox",
+			"lat": "41.8299",
+			"lon": "-87.6338",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".265",
+					"Brian Dozier": ".242",
+					"Eduardo Escobar": ".323",
+					"Eddie Rosario": ".108",
+					"Miguel Sano": ".308",
+					"Byron Buxton": ".200"
+				},
+				"2016":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".412",
+					"Eduardo Escorbar": ".063",
+					"Eddie Rosario": ".286",
+					"Miguel Sano": ".136",
+					"Byron Buxton": ".238"
+				},
+				"2015":{
+					"Joe Mauer": ".207",
+					"Brian Dozier": ".256",
+					"Eduardo Escobar": ".207",
+					"Eddie Rosario": ".353",
+					"Miguel Sano": ".182",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "Yankee Stadium",
+			"location": "Bronx, NY",
+			"capicity": 54251,
+			"teamName": "New York Yankees",
+			"lat": "40.8296",
+			"lon": "-73.9262",
+			"years": {
+				"2017": {
+					"Joe Mauer": ".333",
+					"Brian Dozier": ".222",
+					"Eduardo Escobar": ".083",
+					"Eddie Rosario": ".083",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2016":{
+					"Joe Mauer": ".100",
+					"Brian Dozier": ".417",
+					"Eduardo Escobar": ".091",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".167"
+				},
+				"2015":{
+					"Joe Mauer": ".250",
+					"Brian Dozier": ".250",
+					"Eduardo Escobar": ".375",
+					"Eddie Rosario": ".222",
+					"Miguel Sano": ".333",
+					"Byron Buxton": ".000"
+				}
+			}
+		},
+		{
+			"name": "Citi Field",
+			"location": "Queens, NY",
+			"capicity": 41922,
+			"teamName": "New York Mets",
+			"lat": "40.757",
+			"lon": "-73.8458",
+			"years": {
+				"2017":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				},
+				"2016":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".214",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".143",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".167"
+				},
+				"2015":{
+					"Joe Mauer": ".000",
+					"Brian Dozier": ".000",
+					"Eduardo Escobar": ".000",
+					"Eddie Rosario": ".000",
+					"Miguel Sano": ".000",
+					"Byron Buxton": ".000"
+				}
+			}
+		}
+	]
+}

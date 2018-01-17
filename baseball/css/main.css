@@ -1,0 +1,141 @@
+*{padding: 0; margin:0;}
+
+body{
+	font-family:sans-serif;
+}
+
+#container{
+	width:960px;
+	min-height:200px;
+	margin:20px auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	border:1px solid rgb(190,190,190);
+	border-radius:5px;
+}
+
+#player{
+	flex: 1;
+	border-right:1px solid rgb(190,190,190);
+}
+
+#map{
+	flex: 4;
+	position: relative;
+	background: #cad2d4;
+}
+
+.mapTooltip{
+	position:absolute;
+	padding:10px;
+	background:#fff;
+	border:1px solid rgb(190,190,190);
+	left: 40px;
+	top:10px;
+	display:none;
+	pointer-events: none;
+	border-radius:5px;
+}
+
+.mapTooltip p {
+	font-weight: bold;
+	font-size:.9em;
+	line-height:1.5em;
+}
+
+.mapTooltip span{
+	font-weight: normal;
+}
+
+#zoomButtons{
+	width:30px;
+	position:absolute;
+	top:5px;
+	left:5px;
+}
+
+#zoomButtons button{
+	width:25px;
+	height:25px;
+	border-radius:5px;
+	outline:none;
+}
+
+#zoomButtons button:nth-child(1){
+	margin-bottom:5px;
+}
+
+#controls{
+	width:100%;
+	height:60px;
+	border-top:1px solid rgb(190,190,190);
+	position: relative;
+}
+
+.selects{
+	height:100%;
+	width:315px;
+	margin-left: 10px;
+}
+
+.selects .select:first-child{
+	margin-right:10px;
+}
+
+.select{
+	width:150px;
+	margin-top: 21px;
+	border-radius:5px;
+	outline: none;
+}
+
+#legend{
+	width:410px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top:0;
+}
+
+#legend p{
+	margin-top:5px;
+	font-size:.8em;
+	text-align:center;
+	font-weight:bold;
+}
+
+#playerPicture{
+	height:288px;
+	text-align:center;
+	border-bottom:1px solid rgb(190,190,190);
+}
+
+#playerPicture img{
+	width:100%;
+}
+
+#playerInfo{
+	font-size: .8em;
+	padding:10px;
+}
+
+.nameAge,
+.numberPosition,
+.batsThrows,
+.heightWeight{
+	display: flex;
+}
+
+.nameAge,
+.numberPosition,
+.batsThrows{
+	margin-bottom:10px;
+}
+
+.name,
+.number,
+.bats,
+.height{
+	margin-right:5px;
+}
