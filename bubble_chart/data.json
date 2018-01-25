@@ -1,0 +1,37 @@
+{
+	"name": "all",
+	"children": [
+		{
+			"word": "data",
+			"freq": 6,
+			"prob_ds": 2.58131402,
+			"prob_wc": 1.05633801,
+			"prob_dss": -1.5646633,
+			"prob_iidd": 7.00384810 
+		},
+		{
+			"word": "science",
+			"freq": 12,
+			"prob_ds": 0.30178173,
+			"prob_wc": -1.44551820,
+			"prob_dss": 0.8630849,
+			"prob_iidd": 1.16290940 
+		},
+		{
+			"word": "decision",
+			"freq": 3,
+			"prob_ds": -1.79827910,
+			"prob_wc": -3.08312699,
+			"prob_dss": 2.6548444,
+			"prob_iidd": 12.18920174
+		},
+		{
+			"word": "water",
+			"freq": 4,
+			"prob_ds": 0.25217490,
+			"prob_wc": -0.36324233,
+			"prob_dss": 0.1581033,
+			"prob_iidd": 0.06929105
+		}
+	]
+}
