@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <link rel="stylesheet" href="bubbles.css">
+    <script src="bubbles.js"></script>
+    <style>
+    
+    </style>
+  </head>
+  <body>
+    <div id="prev_button">
+        <button class="off" disabled>Previous</button>
+    </div>
+    <div id="adv_button">
+        <button class="on">Next</button>
+    </div>
+    <div>
+        <text id="chart_heading">IIDD</text>
+    </div>
+    <script>
+
+      // setup
+      var h = 600;
+      var w = 1300;
+      var margin = {
+        top: 20,
+        bottom: 60,
+        left: 60,
+        right: 60
+      };
+      var plotwidth = w - margin.left - margin.right;
+      var plotheight = h - margin.top - margin.bottom;
+      
+      // create an svg element
+      var svg = d3.select("body")
+          .append("svg")
+          .attr("id", "plotarea") // id == #plot in css, class == .plot in css
+          .attr("width", w)
+          .attr("height", h);
+      
+      var plotarea = svg.append("g")
+          .classed("plot", true)
+          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+      
+      // button setup
+      var views = ["iidd", "ds", "wc", "dss"],
+          view_names = ["IIDD", "Data Science", "Web Communication", "Decision Support"];
+
+      d3.queue()
+        .defer(d3.json, "freq_data.json")
+        .await(add_bubbles);
+
+    </script>
+  </body>
+</html>

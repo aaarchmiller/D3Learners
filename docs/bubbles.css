@@ -1,0 +1,47 @@
+
+body, html {
+	font-family: "Proxima Nova", sans-serif;
+	text-anchor: middle;
+}
+
+#chart_heading {
+	text-align: center;
+	font-size: 45px;
+	padding: 10px;
+}
+
+#prev_button, 
+#adv_button {
+	float:left;
+	padding: 2px;
+}
+
+button {
+	background-color: #e7e7e7; 
+	color: black;
+	font-size: 16px;
+	padding: 12px 28px;
+	border-radius: 8px;
+}
+
+.on:hover {
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+	cursor: pointer;
+}
+
+.off {
+	opacity: 0.6;
+	box-shadow: none;
+	cursor: not-allowed;
+}
+
+.bubble {
+	color: #fff;
+	dominant-baseline: middle; 
+	/* 
+		won't work in IE:
+		`dominant-baseline` is not supported by Internet Explorer 9, 10, 11, and 
+		Edge (beta) according to this Microsoft documentation. Your only option 
+		is to manually position vertically using dy.
+	*/ 
+}

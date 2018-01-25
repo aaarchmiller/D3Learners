@@ -1,0 +1,608 @@
+{
+  "freq_ds": [
+    {
+      "word": "data",
+      "freq_ds": 0.0611
+    },
+    {
+      "word": "science",
+      "freq_ds": 0.0318
+    },
+    {
+      "word": "information",
+      "freq_ds": 0.022
+    },
+    {
+      "word": "wma",
+      "freq_ds": 0.0073
+    },
+    {
+      "word": "decision",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "water",
+      "freq_ds": 0.0171
+    },
+    {
+      "word": "usgs",
+      "freq_ds": 0.0122
+    },
+    {
+      "word": "products",
+      "freq_ds": 0.0171
+    },
+    {
+      "word": "develop",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "relevant",
+      "freq_ds": 0.0049
+    },
+    {
+      "word": "provide",
+      "freq_ds": 0.0049
+    },
+    {
+      "word": "scientific",
+      "freq_ds": 0.0147
+    },
+    {
+      "word": "web",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "public",
+      "freq_ds": 0.0122
+    },
+    {
+      "word": "response",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "tools",
+      "freq_ds": 0.0073
+    },
+    {
+      "word": "computing",
+      "freq_ds": 0.0147
+    },
+    {
+      "word": "insights",
+      "freq_ds": 0.0122
+    },
+    {
+      "word": "managers",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "policy",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "support",
+      "freq_ds": 0.0049
+    },
+    {
+      "word": "analysis",
+      "freq_ds": 0.0122
+    },
+    {
+      "word": "development",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "issues",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "management",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "challenges",
+      "freq_ds": 0.0098
+    },
+    {
+      "word": "discoverable",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "dissemination",
+      "freq_ds": 0.0049
+    },
+    {
+      "word": "highly",
+      "freq_ds": 0.0073
+    },
+    {
+      "word": "modern",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "projects",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "quality",
+      "freq_ds": 0.0098
+    },
+    {
+      "word": "resources",
+      "freq_ds": 0.0073
+    },
+    {
+      "word": "scientists",
+      "freq_ds": 0.0024
+    },
+    {
+      "word": "skills",
+      "freq_ds": 0.0073
+    },
+    {
+      "word": "training",
+      "freq_ds": 0.0049
+    },
+    {
+      "word": "understanding",
+      "freq_ds": 0.0098
+    }
+  ],
+  "freq_dss": [
+    {
+      "word": "data",
+      "freq_dss": 0.006
+    },
+    {
+      "word": "science",
+      "freq_dss": 0.0476
+    },
+    {
+      "word": "information",
+      "freq_dss": 0.0298
+    },
+    {
+      "word": "wma",
+      "freq_dss": 0.0179
+    },
+    {
+      "word": "decision",
+      "freq_dss": 0.0476
+    },
+    {
+      "word": "water",
+      "freq_dss": 0.0179
+    },
+    {
+      "word": "usgs",
+      "freq_dss": 0.0238
+    },
+    {
+      "word": "products",
+      "freq_dss": 0.006
+    },
+    {
+      "word": "develop",
+      "freq_dss": 0.0089
+    },
+    {
+      "word": "relevant",
+      "freq_dss": 0.0179
+    },
+    {
+      "word": "provide",
+      "freq_dss": 0.0119
+    },
+    {
+      "word": "scientific",
+      "freq_dss": 0.003
+    },
+    {
+      "word": "web",
+      "freq_dss": 0.0089
+    },
+    {
+      "word": "public",
+      "freq_dss": 0.003
+    },
+    {
+      "word": "response",
+      "freq_dss": 0.0179
+    },
+    {
+      "word": "insights",
+      "freq_dss": 0.003
+    },
+    {
+      "word": "makers",
+      "freq_dss": 0.0179
+    },
+    {
+      "word": "managers",
+      "freq_dss": 0.0149
+    },
+    {
+      "word": "policy",
+      "freq_dss": 0.0149
+    },
+    {
+      "word": "support",
+      "freq_dss": 0.0089
+    },
+    {
+      "word": "development",
+      "freq_dss": 0.0119
+    },
+    {
+      "word": "issues",
+      "freq_dss": 0.0119
+    },
+    {
+      "word": "management",
+      "freq_dss": 0.0119
+    },
+    {
+      "word": "resource",
+      "freq_dss": 0.0119
+    },
+    {
+      "word": "accessible",
+      "freq_dss": 0.003
+    },
+    {
+      "word": "based",
+      "freq_dss": 0.003
+    },
+    {
+      "word": "environment",
+      "freq_dss": 0.0119
+    },
+    {
+      "word": "maintain",
+      "freq_dss": 0.006
+    },
+    {
+      "word": "mission",
+      "freq_dss": 0.006
+    },
+    {
+      "word": "modern",
+      "freq_dss": 0.006
+    },
+    {
+      "word": "partners",
+      "freq_dss": 0.003
+    },
+    {
+      "word": "projects",
+      "freq_dss": 0.0089
+    },
+    {
+      "word": "scientists",
+      "freq_dss": 0.0089
+    },
+    {
+      "word": "skills",
+      "freq_dss": 0.003
+    },
+    {
+      "word": "training",
+      "freq_dss": 0.006
+    },
+    {
+      "word": "understand",
+      "freq_dss": 0.0119
+    }
+  ],
+  "freq_wc": [
+    {
+      "word": "data",
+      "freq_wc": 0.0539
+    },
+    {
+      "word": "science",
+      "freq_wc": 0.0245
+    },
+    {
+      "word": "information",
+      "freq_wc": 0.0294
+    },
+    {
+      "word": "wma",
+      "freq_wc": 0.049
+    },
+    {
+      "word": "water",
+      "freq_wc": 0.0196
+    },
+    {
+      "word": "usgs",
+      "freq_wc": 0.0147
+    },
+    {
+      "word": "products",
+      "freq_wc": 0.0049
+    },
+    {
+      "word": "develop",
+      "freq_wc": 0.0245
+    },
+    {
+      "word": "relevant",
+      "freq_wc": 0.0049
+    },
+    {
+      "word": "provide",
+      "freq_wc": 0.0098
+    },
+    {
+      "word": "scientific",
+      "freq_wc": 0.0049
+    },
+    {
+      "word": "web",
+      "freq_wc": 0.0196
+    },
+    {
+      "word": "public",
+      "freq_wc": 0.0049
+    },
+    {
+      "word": "tools",
+      "freq_wc": 0.0196
+    },
+    {
+      "word": "support",
+      "freq_wc": 0.0049
+    },
+    {
+      "word": "resource",
+      "freq_wc": 0.0049
+    },
+    {
+      "word": "accessible",
+      "freq_wc": 0.0147
+    },
+    {
+      "word": "based",
+      "freq_wc": 0.0147
+    },
+    {
+      "word": "digital",
+      "freq_wc": 0.0196
+    },
+    {
+      "word": "discoverable",
+      "freq_wc": 0.0147
+    },
+    {
+      "word": "dissemination",
+      "freq_wc": 0.0098
+    },
+    {
+      "word": "highly",
+      "freq_wc": 0.0049
+    },
+    {
+      "word": "maintain",
+      "freq_wc": 0.0098
+    },
+    {
+      "word": "mission",
+      "freq_wc": 0.0098
+    },
+    {
+      "word": "modern",
+      "freq_wc": 0.0049
+    },
+    {
+      "word": "modernize",
+      "freq_wc": 0.0196
+    },
+    {
+      "word": "partners",
+      "freq_wc": 0.0147
+    },
+    {
+      "word": "resources",
+      "freq_wc": 0.0049
+    }
+  ],
+  "freq_iidd": [
+    {
+      "word": "data",
+      "freq_iidd": 0.04
+    },
+    {
+      "word": "science",
+      "freq_iidd": 0.0358
+    },
+    {
+      "word": "information",
+      "freq_iidd": 0.0263
+    },
+    {
+      "word": "wma",
+      "freq_iidd": 0.02
+    },
+    {
+      "word": "decision",
+      "freq_iidd": 0.0179
+    },
+    {
+      "word": "water",
+      "freq_iidd": 0.0179
+    },
+    {
+      "word": "usgs",
+      "freq_iidd": 0.0169
+    },
+    {
+      "word": "products",
+      "freq_iidd": 0.0105
+    },
+    {
+      "word": "develop",
+      "freq_iidd": 0.0095
+    },
+    {
+      "word": "relevant",
+      "freq_iidd": 0.0095
+    },
+    {
+      "word": "provide",
+      "freq_iidd": 0.0084
+    },
+    {
+      "word": "scientific",
+      "freq_iidd": 0.0084
+    },
+    {
+      "word": "web",
+      "freq_iidd": 0.0084
+    },
+    {
+      "word": "public",
+      "freq_iidd": 0.0074
+    },
+    {
+      "word": "response",
+      "freq_iidd": 0.0074
+    },
+    {
+      "word": "tools",
+      "freq_iidd": 0.0074
+    },
+    {
+      "word": "computing",
+      "freq_iidd": 0.0063
+    },
+    {
+      "word": "insights",
+      "freq_iidd": 0.0063
+    },
+    {
+      "word": "makers",
+      "freq_iidd": 0.0063
+    },
+    {
+      "word": "managers",
+      "freq_iidd": 0.0063
+    },
+    {
+      "word": "policy",
+      "freq_iidd": 0.0063
+    },
+    {
+      "word": "support",
+      "freq_iidd": 0.0063
+    },
+    {
+      "word": "analysis",
+      "freq_iidd": 0.0053
+    },
+    {
+      "word": "development",
+      "freq_iidd": 0.0053
+    },
+    {
+      "word": "issues",
+      "freq_iidd": 0.0053
+    },
+    {
+      "word": "management",
+      "freq_iidd": 0.0053
+    },
+    {
+      "word": "resource",
+      "freq_iidd": 0.0053
+    },
+    {
+      "word": "accessible",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "based",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "challenges",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "digital",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "discoverable",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "dissemination",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "environment",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "highly",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "maintain",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "mission",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "modern",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "modernize",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "partners",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "projects",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "quality",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "resources",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "scientists",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "skills",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "training",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "understand",
+      "freq_iidd": 0.0042
+    },
+    {
+      "word": "understanding",
+      "freq_iidd": 0.0042
+    }
+  ],
+  "freq_min": [0.0024],
+  "freq_max": [0.0611]
+}
