@@ -5,10 +5,10 @@ function add_bubbles() {
 	
 	var scaleFont = d3.scaleLinear()
 			.domain([data_all.freq_min, data_all.freq_max])
-			.range([6, 80]);
+			.range([16, 80]);
 	var scaleRadius = d3.scaleLinear()
 			.domain([data_all.freq_min, data_all.freq_max])
-			.range([10, 200]);
+			.range([50, 200]);
 	
 	var counter = 0,
 		freq_name = "freq_" + views[counter],
@@ -16,7 +16,7 @@ function add_bubbles() {
 		prev_button = d3.select("#prev_button button"),
 		adv_button = d3.select("#adv_button button");
 	
-	var strength = -1;
+	var strength = -10;
 	var strengthForce = d3.forceManyBody().strength(strength);
 	var simulation = d3.forceSimulation()
 		.force("center", d3.forceCenter(plotwidth / 2, plotheight / 2))
@@ -24,25 +24,15 @@ function add_bubbles() {
 		.force('collision', d3.forceCollide().radius(function(d) {
 			return scaleRadius(d[freq_name]);
 		}))
-		.alpha(3)
+		.alpha(1)
 		.on("tick", ticked);
-	
-	// var data = data_all[freq_name];
-	// var bubbles = plotarea
-	// 		.selectAll('.bubble')
-			// .data(data)
-			// .enter()
-			// .append("g")
-			// .attr("class", "bubble");
-	
-	var data = data_all[freq_name];
-	var bubbles = plotarea
-			.selectAll('.bubble')
-			.data(data)
-			.enter()
-			.append("g")
-			.attr("class", "bubble");
-	setup_bubbles(data, freq_name);
+
+	var data = data_all[freq_name],
+		count = 0,
+		strength_tick = strength;
+
+	simulation.nodes(data);
+	update_bubbles(data, freq_name);
 
 	// Use buttons
 	d3.selectAll('#adv_button').on('click', function() {
@@ -50,9 +40,17 @@ function add_bubbles() {
 		freq_name = "freq_" + views[counter],
 		header_name = view_names[counter];
 		
-		update_bubbles(data_all, header_name, freq_name);
-		buttonLogic(counter, prev_button, adv_button);	
+		data = data_all[freq_name];
+		count = 0;
+		strength_tick = strength;
 
+		update_bubbles(data, freq_name);
+		buttonLogic(counter, prev_button, adv_button);
+		
+		simulation.nodes(data).alpha(1).restart();
+
+		d3.select("#chart_heading")
+			.text(header_name);
 	});
 
 	d3.selectAll('#prev_button').on('click', function() {
@@ -60,73 +58,103 @@ function add_bubbles() {
 		freq_name = "freq_" + views[counter],
 		header_name = view_names[counter];
 		
-		update_bubbles(data_all, header_name, freq_name);
-		buttonLogic(counter, prev_button, adv_button);
+		data = data_all[freq_name];
+		count = 0;
+		strength_tick = strength;
 
+		update_bubbles(data, freq_name);
+		buttonLogic(counter, prev_button, adv_button);
+		
+		simulation.nodes(data).alpha(1).restart();
+
+		d3.select("#chart_heading")
+			.text(header_name);
 	});
 
 	// functions:
+	
+	function update_bubbles (data, freq_name) {
 
-	function setup_bubbles(data, freq_name) {
+		var bubbles = plotarea
+				.selectAll('.bubble')
+				.data(data, function(d) { return d.word; }); // join data by key (rather than index)
 		
-		simulation.nodes(data);
-
-		bubbles.append("circle")
-			.attr('r', function(d) { return scaleRadius(d[freq_name]); })
+		var bubbles_g = bubbles
+				.enter()
+				.append("g")
+				.attr("class", "bubble");
+		
+		bubbles_g // enter circles
+			.append("circle")
 			.style("fill", "#68a0b0")
+			.attr('r', 0)
 			.call(d3.drag()
 					.on("start", dragstarted)
 					.on("drag", dragged)
 					.on("end", dragended));
 
-		bubbles.append("text")
+		bubbles_g // enter text
+			.append("text")
 			.text(function(d) { return d.word; })
-			.attr("font-size", function(d) { return scaleFont(d[freq_name])+"px"; })
 			.attr("text-anchor", "middle")
 			.attr("fill", "#fff")
+			.attr('font-size', "0px")
 			.call(d3.drag()
 					.on("start", dragstarted)
 					.on("drag", dragged)
 					.on("end", dragended));
 
-	}
+		bubbles_g = bubbles_g.merge(bubbles);
 
-	function update_bubbles(data_all, header_name, freq_name) {
-		
-		var data = data_all[freq_name];
-		
-		bubbles.data(data);
-
-		simulation.nodes(data);
-		
-		bubbles.select("circle")
+		bubbles_g.selectAll("circle")
+			.data(data, function(d) { return d.word; })
 			.transition().duration(1000)
-			.style("fill", "#68a0b0")
 			.attr('r', function(d) { return scaleRadius(d[freq_name]); });
-		
-		bubbles.select("text")
-			.text(function(d) { return d.word; })
+		bubbles_g.selectAll("text")
+			.data(data, function(d) { return d.word; })
 			.transition().duration(1000)
 			.attr("font-size", function(d) { return scaleFont(d[freq_name])+"px"; });
-		
-		d3.select("#chart_heading")
-			.text(header_name);
 
-		bubbles.exit().remove();
+		// smooth exits
+		bubbles
+			.exit()
+			.selectAll("circle")
+			.transition().duration(1000)
+			.attr('r', function(d) { return 0; })
+			.remove();
+		bubbles
+			.exit()
+			.selectAll("text")
+			.transition().duration(1000)
+			.attr("font-size", function(d) { return "0px"; })
+			.remove();
+		bubbles.exit()
+			.transition().delay(1000)
+			.remove();
 	}
 
-	var count = 0;
 	function ticked() {
 		count++;
-
+		
 		// switch strength between +/- for bounce effect
-		if(count%50 == 0) { strength = strength * -1; }
-		strengthForce.strength(strength);
-
-		bubbles.selectAll("circle")
-			.attr('cx', function(d) { return d.x })
-			.attr('cy', function(d) { return d.y });
-		bubbles.selectAll("text")
+		if(count%50 == 0) { strength_tick = strength_tick * -1; }
+		strengthForce.strength(strength_tick);
+		
+		plotarea
+			.selectAll('.bubble circle')
+			// .attr('cx', function(d) { return d.x })
+			// .attr('cy', function(d) { return d.y });
+			.attr('cx', function(d) { 
+				var radius = scaleRadius(d[freq_name]);
+				return d.x = Math.max(radius, Math.min(plotwidth - radius, d.x));
+			})
+			.attr('cy', function(d) { 
+				var radius = scaleRadius(d[freq_name]);
+				return d.y = Math.max(radius, Math.min(plotheight - radius, d.y)); 
+			});
+		// this uses the new d.y, and d.x calculated in cy/cx to stay inside the plot boundary
+		plotarea
+			.selectAll('.bubble text')
 			.attr('x', function(d) { return d.x })
 			.attr('y', function(d) { return d.y });
 		
