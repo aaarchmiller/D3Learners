@@ -142,6 +142,8 @@ function add_bubbles() {
 		
 		plotarea
 			.selectAll('.bubble circle')
+			// .attr('cx', function(d) { return d.x })
+			// .attr('cy', function(d) { return d.y });
 			.attr('cx', function(d) { 
 				var radius = scaleRadius(d[freq_name]);
 				return d.x = Math.max(radius, Math.min(plotwidth - radius, d.x));
