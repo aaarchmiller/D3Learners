@@ -5,10 +5,10 @@ function add_bubbles() {
 	
 	var scaleFont = d3.scaleLinear()
 			.domain([data_all.freq_min, data_all.freq_max])
-			.range([8, 65]);
+			.range([16, 80]);
 	var scaleRadius = d3.scaleLinear()
 			.domain([data_all.freq_min, data_all.freq_max])
-			.range([30, 160]);
+			.range([50, 200]);
 	
 	var counter = 0,
 		freq_name = "freq_" + views[counter],
@@ -72,8 +72,6 @@ function add_bubbles() {
 	});
 
 	// functions:
-
-	/// REDO of enter/update/exit pattern:
 	
 	function update_bubbles (data, freq_name) {
 
@@ -89,22 +87,22 @@ function add_bubbles() {
 		bubbles_g // enter circles
 			.append("circle")
 			.style("fill", "#68a0b0")
-			.attr('r', 0);
-			// .call(d3.drag()
-			// 		.on("start", dragstarted)
-			// 		.on("drag", dragged)
-			// 		.on("end", dragended));
+			.attr('r', 0)
+			.call(d3.drag()
+					.on("start", dragstarted)
+					.on("drag", dragged)
+					.on("end", dragended));
 
 		bubbles_g // enter text
 			.append("text")
 			.text(function(d) { return d.word; })
 			.attr("text-anchor", "middle")
 			.attr("fill", "#fff")
-			.attr('font-size', "0px");
-			// .call(d3.drag()
-			// 		.on("start", dragstarted)
-			// 		.on("drag", dragged)
-			// 		.on("end", dragended));
+			.attr('font-size', "0px")
+			.call(d3.drag()
+					.on("start", dragstarted)
+					.on("drag", dragged)
+					.on("end", dragended));
 
 		bubbles_g = bubbles_g.merge(bubbles);
 
@@ -134,8 +132,6 @@ function add_bubbles() {
 			.transition().delay(1000)
 			.remove();
 	}
-	
-	/////////////////////////////////////////////
 
 	function ticked() {
 		count++;
@@ -146,8 +142,15 @@ function add_bubbles() {
 		
 		plotarea
 			.selectAll('.bubble circle')
-			.attr('cx', function(d) { return d.x })
-			.attr('cy', function(d) { return d.y });
+			.attr('cx', function(d) { 
+				var radius = scaleRadius(d[freq_name]);
+				return d.x = Math.max(radius, Math.min(plotwidth - radius, d.x));
+			})
+			.attr('cy', function(d) { 
+				var radius = scaleRadius(d[freq_name]);
+				return d.y = Math.max(radius, Math.min(plotheight - radius, d.y)); 
+			});
+		// this uses the new d.y, and d.x calculated in cy/cx to stay inside the plot boundary
 		plotarea
 			.selectAll('.bubble text')
 			.attr('x', function(d) { return d.x })
