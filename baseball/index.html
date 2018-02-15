@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Tech Tuesday Demo</title>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+</head>
+
+<body>
+	
+	<div id="container">
+		<div id="player">
+			<div id="playerPicture"></div>
+			<div id="playerInfo">
+				<div class="nameAge">
+					<p class="name"></p>
+					<p>Age: <span class="age"></span></p>
+				</div>
+				<div class="numberPosition">
+					<p>#<span class="number"></span></p>
+					<p>Position: <span class="position"></span></p>
+				</div>
+				<div class="batsThrows">
+					<p>Bats: <span class="bats"></span></p>
+					<p>Throws: <span class="throws"></span></p>
+				</div>
+				<div class="heightWeight">
+					<p>Height: <span class="height"></span></p>
+					<p>Weight: <span class="weight"></span></p>
+				</div>
+			</div>
+		</div>
+		<div id="map">
+			<div id="zoomButtons">
+				<button class="zoom in"><i class="fa fa-plus"></i></button>
+				<button class="zoom out"><i class="fa fa-minus"></i></button>
+			</div>
+		</div>
+		<div id="controls">
+			<div class="selects">
+				<select id="yearSelect" class="select"></select>
+				<select id="playerSelect" class="select"></select>
+			</div>
+			<div id="legend"></div>
+		</div>
+		<div class="mapTooltip">
+			<h3 class="stadiumName"></h3>
+			<p>Location: <span class="location"></span></p>
+			<p>Home to the: <span class="teamName"></span></p>
+			<p>Capacity: <span class="capacity"></span> </p>
+			<p>Batting Average: <span class="battingAverage"></span> </p>
+		</div>
+	</div>
+	
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/d3.v4.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
+</body>
+</html>
