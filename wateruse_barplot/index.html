@@ -4,10 +4,18 @@
 	<meta charset="UTF-8">
 	<title>Water Use 1</title>
 	<link rel="stylesheet" href="main.css">
-	<script src="https://d3js.org/d3.v4.min.js"></script>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
 	<script type="text/javascript" src="https://d3js.org/colorbrewer.v1.min.js"></script>
 </head>
 <body>
+	
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Sit amet nulla facilisi morbi tempus iaculis. Elementum tempus egestas sed sed risus. Sed risus ultricies tristique nulla aliquet enim. Tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Condimentum mattis pellentesque id nibh tortor. Commodo sed egestas egestas fringilla phasellus. In hac habitasse platea dictumst vestibulum rhoncus.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Sit amet nulla facilisi morbi tempus iaculis. Elementum tempus egestas sed sed risus. Sed risus ultricies tristique nulla aliquet enim. Tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Condimentum mattis pellentesque id nibh tortor. Commodo sed egestas egestas fringilla phasellus. In hac habitasse platea dictumst vestibulum rhoncus.</p>
+	
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Sit amet nulla facilisi morbi tempus iaculis. Elementum tempus egestas sed sed risus. Sed risus ultricies tristique nulla aliquet enim. Tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Condimentum mattis pellentesque id nibh tortor. Commodo sed egestas egestas fringilla phasellus. In hac habitasse platea dictumst vestibulum rhoncus.</p>
+	
 <script>
 // chart basics
 var svgWidth = 800,
@@ -143,6 +151,12 @@ var plot = function(params) {
 		});
 
 }
+d3.selectAll("p").style("color", function() {
+  return "hsl(" + Math.random() * 360 + ",100%,50%)";
+});
+
 </script>
+	
+	
 </body>
 </html>
